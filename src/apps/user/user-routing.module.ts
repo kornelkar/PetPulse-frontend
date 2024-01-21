@@ -1,4 +1,5 @@
-import { Routes } from "@angular/router";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
     {
@@ -6,3 +7,15 @@ const routes: Routes = [
         loadChildren: () =>
     },
 ]
+
+@NgModule({
+    declarations: [],
+    imports: [
+        RouterModule.forRoot(routes, {
+            onSameUrlNavigation: 'reload',
+            useHash: true,
+        }),
+    ],
+    exports: [RouterModule],
+})
+export class UserRoutingModule {} 

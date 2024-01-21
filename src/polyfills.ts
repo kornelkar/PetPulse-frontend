@@ -64,7 +64,7 @@ import 'zone.js'; // Included with Angular CLI.
  */
 declare global {
   interface Window {
-    user?: {
+    test?: {
       accessToken?: string;
       language?: string;
       channelId?: number;

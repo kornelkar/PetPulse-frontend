@@ -155,8 +155,7 @@
                   "maximumError": "16kb"
                 }
               ],
-              "outputHashing": "all",
-              "baseHref": "/user/petpulse/app"
+              "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
@@ -165,7 +164,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
-              "baseHref": "petpulse/user/petpulse/app"
+              "baseHref": "petpulse/user"
             }
           },
           "defaultConfiguration": "production"
@@ -217,6 +216,6 @@
   },
   "cli": {
     "analytics": false,
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": ["@schematics/angular"]
   }
 }

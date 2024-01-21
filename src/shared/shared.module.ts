@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BaseButtonComponent } from './components/base-button/base-button.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    BaseButtonComponent
+    BaseButtonComponent,
+    LoginPageComponent,
   ],
-  imports: [],
+  imports: [
+  CommonModule,
+  FormsModule,
+],
   providers: [],
   exports: [
-    BaseButtonComponent
+    BaseButtonComponent,
+    LoginPageComponent,
   ]
 })
 export class SharedModule {}

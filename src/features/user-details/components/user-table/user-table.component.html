@@ -1,0 +1,28 @@
+<div class="table">
+  <div class="table__header">
+    <div class="table__header--name">Imię</div>
+    <div class="table__header--surname">Nazwisko</div>
+    <div class="table__header--company">Nazwa firmy</div>
+    <div class="table__header--nip">NIP</div>
+    <div class="table__header--regon">Regon</div>
+    <div class="table__header--postal">Kod pocztowy</div>
+    <div class="table__header--city">Miasto</div>
+    <div class="table__header--street">Ulica</div>
+    <div class="table__header--phone">Numer telefonu</div>
+    <div class="table__header--id">ID</div>
+  </div>
+  <div class="table__content">
+    <div class="table__row" *ngFor="let detail of details">
+      <div class="table__row--cell-name">{{ detail.firstName }}</div>
+      <div class="table__row--cell-surname">{{ detail.lastName }}</div>
+      <div class="table__row--cell-company">{{ detail.companyName }}</div>
+      <div class="table__row--cell-nip">{{ detail.nip }}</div>
+      <div class="table__row--cell-regon">{{ detail.regon }}</div>
+      <div class="table__row--cell-postal">{{ detail.postalCode }}</div>
+      <div class="table__row--cell-city">{{ detail.city }}</div>
+      <div class="table__row--cell-street">{{ detail.street }}</div>
+      <div class="table__row--cell-phone">{{ detail.phone }}</div>
+      <div class="table__row--cell-id">{{ detail.userId }}</div>
+    </div>
+  </div>
+</div>

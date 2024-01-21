@@ -1,0 +1,7 @@
+$media-mobile-min: 1024px;
+
+@mixin mobile() {
+    @media only screen and (min-width: $media-mobile-min) {
+        @content;
+    }
+}

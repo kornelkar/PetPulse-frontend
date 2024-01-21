@@ -1,0 +1,82 @@
+import { Component, Input } from '@angular/core';
+import { DetailsListElement } from '../../models/details-list-element.model';
+
+@Component({
+  selector: 'user-table',
+  templateUrl: './user-table.component.html',
+  styleUrls: ['./user-table.component.scss']
+})
+export class UserTableComponent {
+@Input()
+details: DetailsListElement[] = [
+  {
+    firstName: "Jan",
+    lastName: "Kowalski",
+    postalCode: "12-345",
+    city: "Warszawa",
+    street: "Aleje Jerozolimskie 123",
+    phone: 123456789,
+    userId: 987654,
+  },
+  {
+    firstName: "Anna",
+    lastName: "Nowak",
+    companyName: "Inna Firma",
+    nip: 9876543210,
+    regon: "987654321",
+    postalCode: "54-321",
+    city: "Kraków",
+    street: "ul. Floriańska 12",
+    phone: 987654321,
+    userId: 123456,
+  },
+  {
+    firstName: "Piotr",
+    lastName: "Wiśniewski",
+    companyName: "ABC Sp. z o.o.",
+    nip: 1357924680,
+    regon: "246813579",
+    postalCode: "67-890",
+    city: "Gdańsk",
+    street: "ul. Mariacka 7",
+    phone: 456789123,
+    userId: 135790,
+  },
+  {
+    firstName: "Jan",
+    lastName: "Kowalski",
+    companyName: "Przykładowa Firma",
+    nip: 1234567890,
+    regon: "123456789",
+    postalCode: "12-345",
+    city: "Warszawa",
+    street: "Aleje Jerozolimskie 123",
+    phone: 123456789,
+    userId: 987654,
+  },
+  {
+    firstName: "Anna",
+    lastName: "Nowak",
+    companyName: "Inna Firma",
+    nip: 9876543210,
+    regon: "987654321",
+    postalCode: "54-321",
+    city: "Kraków",
+    street: "ul. Floriańska 12",
+    phone: 987654321,
+    userId: 123456,
+  },
+  {
+    firstName: "Piotr",
+    lastName: "Wiśniewski",
+    companyName: "ABC Sp. z o.o.",
+    nip: 1357924680,
+    regon: "246813579",
+    postalCode: "67-890",
+    city: "Gdańsk",
+    street: "ul. Mariacka 7",
+    phone: 456789123,
+    userId: 135790,
+  },
+];
+}

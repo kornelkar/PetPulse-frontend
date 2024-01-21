@@ -1,0 +1,47 @@
+@import "../../../../../../zwierz/src/styles/responsivness";
+
+.table {
+  font-family: system-ui;
+  grid-area: content;
+  display: grid;
+
+  &__header {
+    display: none;
+    font-weight: 700;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 14px;
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &__row {
+    cursor: pointer;
+    display: grid;
+    row-gap: 4px;
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+    grid-template-columns: 1fr min-content;
+    text-align: left;
+  }
+
+  .table__row:nth-child(even) {
+    background-color: rgb(192, 192, 192);
+  }
+
+  &__header,
+  &__row {
+    @include mobile {
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      padding: 10px 22px;
+      border-bottom: 1px solid grey;
+    }
+  }
+}
