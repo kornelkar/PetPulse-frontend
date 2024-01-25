@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from "../../../core/services/auth/auth.service";
+import {User} from "../../../core/models/user.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'login-page',
@@ -6,11 +9,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
-  username: string = '';
-  password: string = '';
+  user: User = new User('', '');
 
-  login() {
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+  }
+
+  onLogin(): void {
+    this.authService.login(this.user.email, this.user.password).subscribe(
+      data => {
+        console.log('Login successful', data);
+        this.router.navigate(['/pet-admin-page']);
+      },
+      error => {
+        console.error('Error logging in', error);
+        // Handle login error
+      }
+    );
   }
 }
