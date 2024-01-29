@@ -10,6 +10,9 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule, HttpHandler} from "@ang
 import {TokenInterceptor} from "../../core/interceptor/token-interceptor";
 import {PetAdminPageComponent} from "../../core/components/pet-admin-page/pet-admin-page.component";
 import {AdminRoutingModule} from "./admin-routing.module";
+import {
+  EditUserDataFormComponent
+} from "../../features/user-details/components/edit-user-data-form/edit-user-data-form.component";
 
 @NgModule({
   declarations: [

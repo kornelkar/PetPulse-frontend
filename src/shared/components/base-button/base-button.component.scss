@@ -1,121 +1,121 @@
-//@import "src/styles/color.scss";
-//
-//.base-button {
-//  outline: none;
-//  border: none;
-//  cursor: pointer;
-//  text-decoration: none;
-//  background-color: transparent;
-//  display: flex;
-//  width: fit-content;
-//  align-items: center;
-//  font-weight: 700;
-//  font-size: 1rem;
-//  line-height: 1.5rem;
-//  justify-content: center;
-//  text-align: center;
-//  position: relative;
-//  overflow: hidden;
-//  margin: 0;
-////   transition: $base-animation;
-//  background-position: center;
-//  flex-direction: row;
-//
-//  &:disabled {
-//    cursor: no-drop;
-//  }
-//
-//  &:focus-visible {
-//    outline: 3px solid $blue-A0;
-//    outline-offset: 3px;
-//  }
-//
-//  &--filled-shadow-blue {
-//    background-color: $blue-A0;
-//    color: $white-A0;
-//  }
-//
-//  &--filled-shadow-white-blue {
-//    background-color: $white-A0;
-//    color: $blue-A0;
-//  }
-//
-//  &--filled-shadow-white-blue,
-//  &--filled-shadow-blue {
-//    box-shadow: 0 1px 6px $blue-A0;
-//
-//    &:disabled {
-//      color: $light-grey-A0;
-//      background-color: $gery-A0;
-//    }
-//  }
-//
-////   &--text-green {
-////     color: $surfie-green-A0;
-////     background: none;
-////     border: none;
-//
-////     &:disabled {
-////       color: $boulder-A0;
-////     }
-////   }
-//
-//  &--text-blue {
-//    color: $blue-A0;
-//    background: none;
-//    border: none;
-//
-//    &:disabled {
-//      color: $light-grey-A0;
-//    }
-//  }
-//
-//  &--icon {
-//    column-gap: 8px;
-//  }
-//
-//  &--small-padding {
-//    padding: 6px 33px;
-//    border-radius: 32px;
-//  }
-//
-//  &--normal-padding {
-//    padding: 12px 42px;
-//    border-radius: 48px;
-//  }
-//
-//  &--none-padding {
-//    padding: 0;
-//    border-radius: 4px;
-//  }
-//
-//  &--tiny-font {
-//    font-size: 0.75rem;
-//    line-height: 1rem;
-//  }
-//
-//  &--small-font {
-//    font-size: 0.875rem;
-//    line-height: 1.25rem;
-//  }
-//
-//  &--normal-font {
-//    font-size: 1rem;
-//    line-height: 1.5rem;
-//  }
-//
-//  &--tiny-padding {
-//    padding: 6px 16px;
-//    border-radius: 32px;
-//  }
-//
-//  &--large-font {
-//    font-size: 1.25rem;
-//    line-height: 1.75rem;
-//  }
-//
-//  &--readonly {
-//    cursor: default;
-//    pointer-events: none;
-//  }
-//}
+@import "src/styles/color.scss";
+
+.base-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+//   transition: $base-animation;
+  background-position: center;
+  flex-direction: row;
+
+  &:disabled {
+    cursor: no-drop;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $light-blue-A0;
+    outline-offset: 3px;
+  }
+
+  &--filled-shadow-blue {
+    background-color: $light-blue-A0;
+    color: $white-A0;
+  }
+
+  &--filled-shadow-white-blue {
+    background-color: $white-A0;
+    color: $light-blue-A0;
+  }
+
+  &--filled-shadow-white-blue,
+  &--filled-shadow-blue {
+    box-shadow: 0 1px 6px $light-blue-A0;
+
+    //&:disabled {
+    //  color: $light-grey-A0;
+    //  background-color: $grey-A0;
+    //}
+  }
+
+//   &--text-green {
+//     color: $surfie-green-A0;
+//     background: none;
+//     border: none;
+
+//     &:disabled {
+//       color: $boulder-A0;
+//     }
+//   }
+
+  &--text-blue {
+    color: $light-blue-A0;
+    background: none;
+    border: none;
+
+    &:disabled {
+      color: $light-grey-A0;
+    }
+  }
+
+  &--icon {
+    column-gap: 8px;
+  }
+
+  &--small-padding {
+    padding: 6px 33px;
+    border-radius: 32px;
+  }
+
+  &--normal-padding {
+    padding: 12px 42px;
+    border-radius: 48px;
+  }
+
+  &--none-padding {
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  &--tiny-font {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  &--small-font {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  &--normal-font {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  &--tiny-padding {
+    padding: 6px 16px;
+    border-radius: 32px;
+  }
+
+  &--large-font {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  &--readonly {
+    cursor: default;
+    pointer-events: none;
+  }
+}

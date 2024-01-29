@@ -23,6 +23,25 @@
       <div class="table__row--cell-street">{{ detail.street }}</div>
       <div class="table__row--cell-phone">{{ detail.phone }}</div>
       <div class="table__row--cell-id">{{ detail.userId }}</div>
+      <base-button (pointerClick)="onUserEditClick(detail)"
+        class="table__row--cell-edit"
+        kind="filled-shadow-white-blue"
+        font="tiny"
+        size="tiny"
+        padding="tiny">
+        EDYTUJ
+      </base-button>
+      <base-button (click)="onUserDeleteClick()"
+        class="table__row--cell-delete"
+        kind="filled-shadow-blue"
+        font="tiny"
+        size="tiny"
+        padding="tiny">
+        USUŃ
+      </base-button>
     </div>
   </div>
 </div>
+
+
+<edit-user-data-form *ngIf="selectedUserDetails" [userEdit]="selectedUserDetails" (updateUser)="handleUpdate($event)"></edit-user-data-form>

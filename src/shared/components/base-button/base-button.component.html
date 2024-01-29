@@ -1,54 +1,54 @@
-<!--<ng-template #content>-->
-<!--    <ng-content></ng-content>-->
-<!--  </ng-template>-->
+<ng-template #content>
+    <ng-content></ng-content>
+  </ng-template>
 
-<!--  <a-->
-<!--    rippleEffect-->
-<!--    [isDisabled]="isDisabled"-->
-<!--    *ngIf="isNativeLink"-->
-<!--    [target]="target"-->
-<!--    [routerLink]="link"-->
-<!--    [ngClass]="{-->
-<!--      'base-button': true,-->
-<!--      'base-button&#45;&#45;filled-shadow-blue': kind === 'filled-shadow-blue',-->
-<!--      'base-button&#45;&#45;filled-shadow-white-blue': kind === 'filled-shadow-white-blue',-->
-<!--      'base-button&#45;&#45;text-blue': kind === 'text-blue',-->
-<!--      'base-button&#45;&#45;icon': display === 'icon',-->
-<!--      'base-button&#45;&#45;tiny-font': font === 'tiny',-->
-<!--      'base-button&#45;&#45;small-font': font === 'small',-->
-<!--      'base-button&#45;&#45;normal-font': font === 'normal',-->
-<!--      'base-button&#45;&#45;large-font': font === 'large',-->
-<!--      'base-button&#45;&#45;small-padding': padding === 'small',-->
-<!--      'base-button&#45;&#45;normal-padding': padding === 'normal',-->
-<!--      'base-button&#45;&#45;tiny-padding': padding === 'tiny',-->
-<!--      'base-button&#45;&#45;none-padding': padding === 'none',-->
-<!--      'base-button&#45;&#45;readonly': isReadonly-->
-<!--    }">-->
-<!--    <ng-container *ngTemplateOutlet="content"></ng-container>-->
-<!--  </a>-->
+  <a
+    rippleEffect
+    [isDisabled]="isDisabled"
+    *ngIf="isNativeLink"
+    [target]="target"
+    [routerLink]="link"
+    [ngClass]="{
+      'base-button': true,
+      'base-button--filled-shadow-blue': kind === 'filled-shadow-blue',
+      'base-button--filled-shadow-white-blue': kind === 'filled-shadow-white-blue',
+      'base-button--text-blue': kind === 'text-blue',
+      'base-button--icon': display === 'icon',
+      'base-button--tiny-font': font === 'tiny',
+      'base-button--small-font': font === 'small',
+      'base-button--normal-font': font === 'normal',
+      'base-button--large-font': font === 'large',
+      'base-button--small-padding': padding === 'small',
+      'base-button--normal-padding': padding === 'normal',
+      'base-button--tiny-padding': padding === 'tiny',
+      'base-button--none-padding': padding === 'none',
+      'base-button--readonly': isReadonly
+    }">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </a>
 
-<!--  <button-->
-<!--    rippleEffect-->
-<!--    [isDisabled]="isDisabled"-->
-<!--    (click)="onClick($event)"-->
-<!--    *ngIf="!isNativeLink"-->
-<!--    [disabled]="isDisabled"-->
-<!--    [type]="type"-->
-<!--    [ngClass]="{-->
-<!--      'base-button': true,-->
-<!--      'base-button&#45;&#45;filled-shadow-blue': kind === 'filled-shadow-blue',-->
-<!--      'base-button&#45;&#45;filled-shadow-white-blue': kind === 'filled-shadow-white-blue',-->
-<!--      'base-button&#45;&#45;text-blue': kind === 'text-blue',-->
-<!--      'base-button&#45;&#45;icon': display === 'icon',-->
-<!--      'base-button&#45;&#45;tiny-font': font === 'tiny',-->
-<!--      'base-button&#45;&#45;small-font': font === 'small',-->
-<!--      'base-button&#45;&#45;normal-font': font === 'normal',-->
-<!--      'base-button&#45;&#45;large-font': font === 'large',-->
-<!--      'base-button&#45;&#45;small-padding': padding === 'small',-->
-<!--      'base-button&#45;&#45;normal-padding': padding === 'normal',-->
-<!--      'base-button&#45;&#45;tiny-padding': padding === 'tiny',-->
-<!--      'base-button&#45;&#45;none-padding': padding === 'none',-->
-<!--      'base-button&#45;&#45;readonly': isReadonly-->
-<!--    }">-->
-<!--    <ng-container *ngTemplateOutlet="content"></ng-container>-->
-<!--  </button>-->
+  <button
+    rippleEffect
+    [isDisabled]="isDisabled"
+    (click)="onClick($event)"
+    *ngIf="!isNativeLink"
+    [disabled]="isDisabled"
+    [type]="type"
+    [ngClass]="{
+      'base-button': true,
+      'base-button--filled-shadow-blue': kind === 'filled-shadow-blue',
+      'base-button--filled-shadow-white-blue': kind === 'filled-shadow-white-blue',
+      'base-button--text-blue': kind === 'text-blue',
+      'base-button--icon': display === 'icon',
+      'base-button--tiny-font': font === 'tiny',
+      'base-button--small-font': font === 'small',
+      'base-button--normal-font': font === 'normal',
+      'base-button--large-font': font === 'large',
+      'base-button--small-padding': padding === 'small',
+      'base-button--normal-padding': padding === 'normal',
+      'base-button--tiny-padding': padding === 'tiny',
+      'base-button--none-padding': padding === 'none',
+      'base-button--readonly': isReadonly
+    }">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
