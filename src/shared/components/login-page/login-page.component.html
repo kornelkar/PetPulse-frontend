@@ -7,16 +7,50 @@
 <!--</div>-->
 
 
-<div class="login-container d-flex justify-content-center align-items-center vh-100">
+<div class="login-container d-flex justify-content-center align-items-center vh-100" *ngIf="!isCreatingAccount">
   <form (ngSubmit)="onLogin()" class="w-25">
     <div class="form-group">
-      <label for="emailInput">Email address</label>
-      <input type="email" class="form-control" id="emailInput" [(ngModel)]="user.email" name="email" placeholder="Enter email" required>
+      <label for="emailInput">Adres email</label>
+      <input type="email" class="form-control" id="emailInput" [(ngModel)]="user.email" name="email" placeholder="Podaj email" required>
     </div>
     <div class="form-group">
-      <label for="passwordInput">Password</label>
-      <input type="password" class="form-control" id="passwordInput" [(ngModel)]="user.password" name="password" placeholder="Password" required>
+      <label for="passwordInput">Hasło</label>
+      <input type="password" class="form-control" id="passwordInput" [(ngModel)]="user.password" name="password" placeholder="Podaj hasło" required>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Login</button>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary w-100">Zaloguj się</button>
+    </div>
+    <div class="form-group text-center mt-2">
+      <a class="btn btn-link" (click)="onSwitch()">Nie masz jeszcze konta? Zarejestruj się klikając tutaj.</a>
+    </div>
   </form>
 </div>
+
+<div class="login-container d-flex justify-content-center align-items-center vh-100" *ngIf="isCreatingAccount">
+  <form (ngSubmit)="onRegister()" class="w-25">
+    <div class="form-group">
+      <label for="registerEmailInput">Adres email</label>
+      <input type="email" class="form-control" id="registerEmailInput" [(ngModel)]="newUser.email" name="email" placeholder="Podaj email" required>
+    </div>
+    <div class="form-group">
+      <label for="nameInput">Nazwa</label>
+      <input type="text" class="form-control" id="nameInput" [(ngModel)]="newUser.name" name="name" placeholder="Podaj nazwę" required>
+    </div>
+    <div class="form-group">
+      <label for="registerPasswordInput">Hasło</label>
+      <input type="password" class="form-control" id="registerPasswordInput" [(ngModel)]="newUser.password" name="password" placeholder="Podaj hasło" required>
+    </div>
+    <div class="form-group">
+      <label for="checkPasswordInput">Powtórz Hasło</label>
+      <input type="password" class="form-control" id="checkPasswordInput" [(ngModel)]="newUser.passwordCheck" name="checkPassword" placeholder="Powtórz podane hasło" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary w-100">Utwórz nowe konto</button>
+    </div>
+    <div class="form-group text-center mt-2">
+      <a class="btn btn-link" (click)="onSwitch()">Masz już konto? Zaloguj się klikając tutaj.</a>
+    </div>
+  </form>
+</div>
+
+

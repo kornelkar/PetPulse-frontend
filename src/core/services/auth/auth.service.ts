@@ -71,15 +71,32 @@ export class AuthService {
     );
   }
 
+  register(email: string, name: string, password: string, passwordCheck: string): Observable<any> {
+    return this.http.post<any>('http://zwierzaczki-backend.test/api/register', {
+      email,
+      name,
+      password,
+      passwordCheck
+    }).pipe(
+      map(response => {
+        return response;
+      }),
+      catchError(error => {
+        console.error('Registration error', error);
+        return of(error);
+      })
+    )
+  }
+
 
   logout(): Observable<any> {
     // Sprawdzenie, czy token istnieje
     if (!this.currentTokenSubject.value) {
-      return of({ error: "No token found" });
+      return of({error: "No token found"});
     }
 
     return this.http.post('http://zwierzaczki-backend.test/api/logout', {}, {
-      headers: { Authorization: `Bearer ${this.currentTokenSubject.value}` }
+      headers: {Authorization: `Bearer ${this.currentTokenSubject.value}`}
     }).pipe(
       tap(() => {
         this.currentTokenSubject.next(null);

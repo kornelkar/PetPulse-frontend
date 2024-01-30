@@ -16,9 +16,7 @@ export class PetHeaderComponent {
   }
 
 
-  onLogOutButton()
-    :
-    void {
+  onLogOutButton(): void {
     this.authService.logout().subscribe(
       data => {
         this.router.navigate(['/login']);
