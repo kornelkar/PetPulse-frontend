@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from "../../services/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'pet-header',
@@ -7,9 +9,23 @@ import { Component } from '@angular/core';
 })
 export class PetHeaderComponent {
 
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {
+  }
 
 
-  onLogOutButton(): void {
-    console.log('Wylogowuje');
+  onLogOutButton()
+    :
+    void {
+    this.authService.logout().subscribe(
+      data => {
+        this.router.navigate(['/login']);
+      },
+      error => {
+        console.error('Error logging out', error);
+      }
+    );
   }
 }

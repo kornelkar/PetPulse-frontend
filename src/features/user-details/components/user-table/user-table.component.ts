@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {UserDetails} from '../../models/user-details.model';
+import {UserType} from "../../../../shared/enums/user-type.enum";
 
 @Component({
   selector: 'user-table',
@@ -17,6 +18,7 @@ export class UserTableComponent {
       street: "Aleje Jerozolimskie 123",
       phone: 123456789,
       userId: 987654,
+      userRole: UserType.ADMIN,
     },
     {
       firstName: "Anna",
@@ -29,6 +31,7 @@ export class UserTableComponent {
       street: "ul. Floriańska 12",
       phone: 987654321,
       userId: 123456,
+      userRole: UserType.PET,
     },
     {
       firstName: "Piotr",
@@ -41,6 +44,7 @@ export class UserTableComponent {
       street: "ul. Mariacka 7",
       phone: 456789123,
       userId: 135790,
+      userRole: UserType.CLIENT,
     },
     {
       firstName: "Jan",
@@ -53,6 +57,7 @@ export class UserTableComponent {
       street: "Aleje Jerozolimskie 123",
       phone: 123456789,
       userId: 987654,
+      userRole: UserType.CLIENT,
     },
     {
       firstName: "Anna",
@@ -65,6 +70,7 @@ export class UserTableComponent {
       street: "ul. Floriańska 12",
       phone: 987654321,
       userId: 123456,
+      userRole: UserType.CLIENT,
     },
     {
       firstName: "Piotr",
@@ -77,6 +83,7 @@ export class UserTableComponent {
       street: "ul. Mariacka 7",
       phone: 456789123,
       userId: 135790,
+      userRole: UserType.CLIENT,
     },
   ];
 

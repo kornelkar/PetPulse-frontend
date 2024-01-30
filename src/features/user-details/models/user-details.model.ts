@@ -1,3 +1,5 @@
+import {UserType} from "../../../shared/enums/user-type.enum";
+
 export interface UserDetails {
   firstName: string;
   lastName: string;
@@ -9,4 +11,5 @@ export interface UserDetails {
   street: string;
   phone: number;
   userId: number;
+  userRole: UserType;
 }

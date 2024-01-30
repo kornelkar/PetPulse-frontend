@@ -6,13 +6,17 @@ import {LoginPageComponent} from "../../shared/components/login-page/login-page.
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginPageComponent,
   },
   {
     path: 'pet-admin-page',
     component: PetAdminPageComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: LoginPageComponent,
   },
 ];
 

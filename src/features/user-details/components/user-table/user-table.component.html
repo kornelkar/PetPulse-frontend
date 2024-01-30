@@ -10,6 +10,7 @@
     <div class="table__header--street">Ulica</div>
     <div class="table__header--phone">Numer telefonu</div>
     <div class="table__header--id">ID</div>
+    <div class="table__header--role">Rola</div>
   </div>
   <div class="table__content">
     <div class="table__row" *ngFor="let detail of details">
@@ -23,6 +24,7 @@
       <div class="table__row--cell-street">{{ detail.street }}</div>
       <div class="table__row--cell-phone">{{ detail.phone }}</div>
       <div class="table__row--cell-id">{{ detail.userId }}</div>
+      <div class="table__row--cell-role">{{ detail.userRole }}</div>
       <base-button (pointerClick)="onUserEditClick(detail)"
         class="table__row--cell-edit"
         kind="filled-shadow-white-blue"
