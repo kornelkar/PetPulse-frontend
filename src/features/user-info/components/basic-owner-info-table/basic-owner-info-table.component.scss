@@ -1,0 +1,37 @@
+/* Stylowanie tabeli */
+.table-hover tbody tr:hover {
+  background-color: #f0f0f0; /* Jasnoszary kolor tła dla wierszy przy najechaniu */
+}
+
+/* Niestandardowy niebieski kolor tła dla nagłówków */
+.bg-primary {
+  background-color: #007bff !important; /* Bootstrapowy niebieski */
+}
+
+/* Niestandardowe kolory tekstu */
+.text-white {
+  color: #ffffff !important;
+}
+
+/* Dodatkowe dostosowania (opcjonalnie) */
+.container {
+  max-width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1); /* Subtelny cień dla tabeli */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #007bff; /* Niebieski */
+  color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2} /* Alternatywne kolory tła dla wierszy */

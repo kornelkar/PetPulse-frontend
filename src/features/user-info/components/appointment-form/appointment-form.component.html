@@ -1,0 +1,32 @@
+<div class="appointment-form">
+  <h2 style="color: #007bff">Zapisz się na wizytę</h2>
+  <form class="appointment-form__form" [formGroup]="appointmentForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <mat-label>Zwierzę</mat-label>
+      <mat-select formControlName="pet">
+        <mat-option *ngFor="let pet of pets" [value]="pet">{{ pet }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Weterynarz</mat-label>
+      <mat-select formControlName="veterinarian">
+        <mat-option *ngFor="let vet of veterinarians" [value]="vet">{{ vet }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cel wizyty</mat-label>
+      <textarea matInput formControlName="purpose" [rows]="4"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Wybierz termin</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="appointmentDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button class="appointment-form__button" mat-button type="submit" [disabled]="!appointmentForm.valid">Zapisz się</button>
+  </form>
+</div>

@@ -1,8 +1,10 @@
-import {Component, Input} from '@angular/core';
+
 import {AuthService} from "../../../core/services/auth/auth.service";
-import {User} from "../../../core/models/user.model";
 import {Router} from "@angular/router";
 import {NewUser} from "../../../core/models/new-user.model";
+import {Location} from "@angular/common";
+import {LoginUser} from "../../../core/models/login-user.model";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'login-page',
@@ -10,14 +12,15 @@ import {NewUser} from "../../../core/models/new-user.model";
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
-  user: User = new User('', '');
+  user: LoginUser = new LoginUser('', '');
   newUser: NewUser = new NewUser('', '', '', '')
 
   isCreatingAccount = false;
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private location: Location,
   ) {
   }
 
@@ -25,7 +28,17 @@ export class LoginPageComponent {
     this.authService.login(this.user.email, this.user.password).subscribe(
       data => {
         console.log('Login successful', data);
-        this.router.navigate(['/pet-admin-page']);
+        // Logika sprawdzająca adres URL
+        const path = this.location.path();
+        if (path.includes('/user/petpulse')) {
+          this.router.navigate(['/pet-user-page']);
+        } else if (path.includes('/admin/petpulse')) {
+          this.router.navigate(['/pet-admin-page']);
+        } else {
+          // Przekierowanie domyślne lub obsługa błędu
+          console.error()
+          // Tutaj możesz przekierować do strony domowej lub pokazać komunikat błędu
+        }
       },
       error => {
         console.error('Error logging in', error);

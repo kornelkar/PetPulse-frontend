@@ -18,7 +18,7 @@ export class UserTableComponent {
       street: "Aleje Jerozolimskie 123",
       phone: 123456789,
       userId: 987654,
-      userRole: UserType.ADMIN,
+      userRole: UserType.Klient,
     },
     {
       firstName: "Anna",
@@ -31,7 +31,7 @@ export class UserTableComponent {
       street: "ul. Floriańska 12",
       phone: 987654321,
       userId: 123456,
-      userRole: UserType.PET,
+      userRole: UserType.Klient,
     },
     {
       firstName: "Piotr",
@@ -44,7 +44,7 @@ export class UserTableComponent {
       street: "ul. Mariacka 7",
       phone: 456789123,
       userId: 135790,
-      userRole: UserType.CLIENT,
+      userRole: UserType.Klient,
     },
     {
       firstName: "Jan",
@@ -57,7 +57,7 @@ export class UserTableComponent {
       street: "Aleje Jerozolimskie 123",
       phone: 123456789,
       userId: 987654,
-      userRole: UserType.CLIENT,
+      userRole: UserType.Klient,
     },
     {
       firstName: "Anna",
@@ -70,7 +70,7 @@ export class UserTableComponent {
       street: "ul. Floriańska 12",
       phone: 987654321,
       userId: 123456,
-      userRole: UserType.CLIENT,
+      userRole: UserType.Klient,
     },
     {
       firstName: "Piotr",
@@ -83,7 +83,7 @@ export class UserTableComponent {
       street: "ul. Mariacka 7",
       phone: 456789123,
       userId: 135790,
-      userRole: UserType.CLIENT,
+      userRole: UserType.Klient,
     },
   ];
 

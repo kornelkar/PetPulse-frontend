@@ -1,0 +1,14 @@
+<div class="grid-container">
+  <div *ngFor="let animal of animals; let i = index" class="grid-item">
+    <table *ngIf="i % 3 === 0">
+      <tr>
+        <th>Nazwa</th>
+        <th>Waga</th>
+      </tr>
+      <tr *ngFor="let a of [animals[i], animals[i+1], animals[i+2]]">
+        <td>{{a?.name}}</td>
+        <td>{{a?.weight}} kg</td>
+      </tr>
+    </table>
+  </div>
+</div>
