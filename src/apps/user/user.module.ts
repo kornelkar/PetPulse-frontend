@@ -12,7 +12,7 @@ import {UserRoutingModule} from "./user-routing.module";
 import {UserDetailsModule} from "../../features/user-info/user-info.module";
 import {
   AppointmentFormComponent
-} from "../../features/user-info/components/appointment-form/appointment-form.component";
+} from "../../features/vet-page/components/appointment-form/appointment-form.component";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({

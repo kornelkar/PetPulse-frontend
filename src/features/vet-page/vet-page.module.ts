@@ -1,15 +1,14 @@
 import {NgModule} from "@angular/core";
+import {AppointmentFormComponent} from "./components/appointment-form/appointment-form.component";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../../shared/shared.module";
-import {BasicOwnerInfoTableComponent} from "./components/basic-owner-info-table/basic-owner-info-table.component";
 import {HttpClientModule} from "@angular/common/http";
-import {PetUserPageComponent} from "./containers/pet-user-page/pet-user-page.component";
+
 
 @NgModule({
   declarations: [
-    BasicOwnerInfoTableComponent,
-    PetUserPageComponent,
+    AppointmentFormComponent,
   ],
   imports: [
     CommonModule,
@@ -20,9 +19,8 @@ import {PetUserPageComponent} from "./containers/pet-user-page/pet-user-page.com
   ],
   providers: [],
   exports: [
-    BasicOwnerInfoTableComponent,
-    PetUserPageComponent,
+    AppointmentFormComponent,
   ]
 })
-export class UserDetailsModule {
+export class VetPageModule {
 }

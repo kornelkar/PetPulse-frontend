@@ -9,11 +9,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "../../core/interceptor/token-interceptor";
 import {RouterOutlet} from "@angular/router";
 import {VetRoutingModule} from "./vet-routing.module";
-import {UserDetailsModule} from "../../features/user-info/user-info.module";
-import {
-  AppointmentFormComponent
-} from "../../features/user-info/components/appointment-form/appointment-form.component";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {VetPageModule} from "../../features/vet-page/vet-page.module";
 
 @NgModule({
     declarations: [
@@ -28,6 +25,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     HttpClientModule,
     RouterOutlet,
     VetRoutingModule,
+    VetPageModule,
   ],
     providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, provideAnimationsAsync()],
     bootstrap: [
