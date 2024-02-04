@@ -12,7 +12,7 @@ import {PetAdminPageComponent} from "../../core/components/pet-admin-page/pet-ad
 import {AdminRoutingModule} from "./admin-routing.module";
 import {
   EditUserDataFormComponent
-} from "../../features/user-details/components/edit-user-data-form/edit-user-data-form.component";
+} from "../../features/user-info/components/edit-user-data-form/edit-user-data-form.component";
 
 @NgModule({
   declarations: [

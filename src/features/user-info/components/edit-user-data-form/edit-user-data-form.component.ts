@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {UserDetails} from "../../models/user-details.model";
+import {UserDetails} from "../../../user-details/models/user-details.model";
+import {OwnerInfo} from "../../../../core/models/owner-info.model";
 
 @Component({
   selector: 'edit-user-data-form',
@@ -7,9 +8,9 @@ import {UserDetails} from "../../models/user-details.model";
   styleUrl: './edit-user-data-form.component.scss'
 })
 export class EditUserDataFormComponent {
-@Input() userEdit!: UserDetails;
+@Input() userEdit!: OwnerInfo;
 
-@Output() updateUser: EventEmitter<UserDetails> = new EventEmitter();
+@Output() updateUser: EventEmitter<OwnerInfo> = new EventEmitter();
 
 onSubmit() {
   this.updateUser.emit(this.userEdit);

@@ -67,6 +67,15 @@ export class AuthService {
     );
   }
 
+  getUserInfo(): Observable<any> {
+    return this.http.get('http://zwierzaczki-backend.test/api/user-info', {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+    });
+  }
+
+
   public get currentToken(): string | null {
     return this.currentTokenSubject.value;
   }

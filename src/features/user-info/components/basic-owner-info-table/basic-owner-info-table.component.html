@@ -1,36 +1,41 @@
-<!--<div class="container mt-4">-->
-<!--  <table class="table table-hover">-->
-<!--    <thead class="bg-primary text-white">-->
-<!--    <tr>-->
-<!--      <th>ID</th>-->
-<!--      <th>Imię</th>-->
-<!--      <th>Nazwisko</th>-->
-<!--      <th>Nazwa firmy</th>-->
-<!--      <th>NIP</th>-->
-<!--      <th>REGON</th>-->
-<!--      <th>Kod pocztowy</th>-->
-<!--      <th>Miasto</th>-->
-<!--      <th>Ulica</th>-->
-<!--      <th>Telefon</th>-->
-<!--      <th>Użytkownik</th>-->
-<!--      <th>Email użytkownika</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr>-->
-<!--      <td>{{ owner.id }}</td>-->
-<!--      <td>{{ owner.first_name }}</td>-->
-<!--      <td>{{ owner.last_name }}</td>-->
-<!--      <td>{{ owner.company_name }}</td>-->
-<!--      <td>{{ owner.nip }}</td>-->
-<!--      <td>{{ owner.regon }}</td>-->
-<!--      <td>{{ owner.postal_code }}</td>-->
-<!--      <td>{{ owner.city }}</td>-->
-<!--      <td>{{ owner.street }}</td>-->
-<!--      <td>{{ owner.phone }}</td>-->
-<!--      <td>{{ owner.user.name }}</td>-->
-<!--      <td>{{ owner.user.email }}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</div>-->
+<div class="table">
+  <div class="table__header">
+    <div class="table__header--name">Imię</div>
+    <div class="table__header--surname">Nazwisko</div>
+    <div class="table__header--company">Nazwa firmy</div>
+    <div class="table__header--nip">NIP</div>
+    <div class="table__header--regon">Regon</div>
+    <div class="table__header--postal">Kod pocztowy</div>
+    <div class="table__header--city">Miasto</div>
+    <div class="table__header--street">Ulica</div>
+    <div class="table__header--phone">Numer telefonu</div>
+    <div class="table__header--id">ID</div>
+    <div class="table__header--role">Rola</div>
+  </div>
+  <div class="table__content">
+    <div class="table__row">
+      <div class="table__row--cell-name">{{ ownerInfo.first_name }}</div>
+      <div class="table__row--cell-surname">{{ ownerInfo.last_name }}</div>
+      <div class="table__row--cell-company">{{ ownerInfo.last_name }}</div>
+      <div class="table__row--cell-nip">{{ ownerInfo.nip }}</div>
+      <div class="table__row--cell-regon">{{ ownerInfo.regon }}</div>
+      <div class="table__row--cell-postal">{{ ownerInfo.postal_code }}</div>
+      <div class="table__row--cell-city">{{ ownerInfo.city }}</div>
+      <div class="table__row--cell-street">{{ ownerInfo.street }}</div>
+      <div class="table__row--cell-phone">{{ ownerInfo.phone }}</div>
+      <div class="table__row--cell-id">{{ ownerInfo.user_id }}</div>
+      <div class="table__row--cell-role">{{ ownerInfo.user }}</div>
+      <base-button (pointerClick)="onUserEditClick(ownerInfo)"
+                   class="table__row--cell-edit"
+                   kind="filled-shadow-white-blue"
+                   font="tiny"
+                   size="tiny"
+                   padding="tiny">
+        EDYTUJ
+      </base-button>
+    </div>
+  </div>
+</div>
+
+
+<edit-user-data-form *ngIf="selectedUserDetails" [userEdit]="selectedUserDetails" (updateUser)="handleUpdate($event)"></edit-user-data-form>

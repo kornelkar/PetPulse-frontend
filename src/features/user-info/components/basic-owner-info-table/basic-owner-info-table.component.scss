@@ -1,37 +1,47 @@
-/* Stylowanie tabeli */
-.table-hover tbody tr:hover {
-  background-color: #f0f0f0; /* Jasnoszary kolor tła dla wierszy przy najechaniu */
-}
-
-/* Niestandardowy niebieski kolor tła dla nagłówków */
-.bg-primary {
-  background-color: #007bff !important; /* Bootstrapowy niebieski */
-}
-
-/* Niestandardowe kolory tekstu */
-.text-white {
-  color: #ffffff !important;
-}
-
-/* Dodatkowe dostosowania (opcjonalnie) */
-.container {
-  max-width: 100%;
-}
+@import "src/styles/responsivness.scss";
 
 .table {
-  border-collapse: collapse;
-  width: 100%;
-  box-shadow: 0 5px 15px rgba(0,0,0,.1); /* Subtelny cień dla tabeli */
-}
+  font-family: system-ui;
+  grid-area: content;
+  display: grid;
 
-th, td {
-  text-align: left;
-  padding: 8px;
-}
+  &__header {
+    display: none;
+    font-weight: 700;
+  }
 
-th {
-  background-color: #007bff; /* Niebieski */
-  color: white;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 14px;
 
-tr:nth-child(even) {background-color: #f2f2f2} /* Alternatywne kolory tła dla wierszy */
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &__row {
+    cursor: pointer;
+    display: grid;
+    row-gap: 4px;
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+    grid-template-columns: 1fr min-content;
+    text-align: left;
+  }
+
+  .table__row:nth-child(even) {
+    background-color: rgb(192, 192, 192);
+  }
+
+  &__header,
+  &__row {
+    @include mobile {
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      padding: 10px 22px;
+      border-bottom: 1px solid grey;
+    }
+  }
+}

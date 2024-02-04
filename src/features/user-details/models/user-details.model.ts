@@ -1,15 +1,12 @@
-import {UserType} from "../../../shared/enums/user-type.enum";
+import {Role} from "../../../core/models/role.model";
 
 export interface UserDetails {
-  firstName: string;
-  lastName: string;
-  companyName?: string;
-  nip?: number;
-  regon?: string;
-  postalCode: string;
-  city: string;
-  street: string;
-  phone: number;
-  userId: number;
-  userRole: UserType;
+id: number;
+name: string;
+email: string;
+email_verified_at: Date | null;
+role_id: number;
+created_at: Date;
+updated_at: Date;
+role: Role;
 }

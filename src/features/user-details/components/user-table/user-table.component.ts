@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {UserDetails} from '../../models/user-details.model';
 import {UserType} from "../../../../shared/enums/user-type.enum";
+import {AuthService} from "../../../../core/services/auth/auth.service";
+import {UserService} from "../../../../core/services/user-info/user.service";
 
 @Component({
   selector: 'user-table',
@@ -8,86 +10,52 @@ import {UserType} from "../../../../shared/enums/user-type.enum";
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent {
-  @Input()
-  details: UserDetails[] = [
-    {
-      firstName: "Jan",
-      lastName: "Kowalski",
-      postalCode: "12-345",
-      city: "Warszawa",
-      street: "Aleje Jerozolimskie 123",
-      phone: 123456789,
-      userId: 987654,
-      userRole: UserType.Klient,
-    },
-    {
-      firstName: "Anna",
-      lastName: "Nowak",
-      companyName: "Inna Firma",
-      nip: 9876543210,
-      regon: "987654321",
-      postalCode: "54-321",
-      city: "Kraków",
-      street: "ul. Floriańska 12",
-      phone: 987654321,
-      userId: 123456,
-      userRole: UserType.Klient,
-    },
-    {
-      firstName: "Piotr",
-      lastName: "Wiśniewski",
-      companyName: "ABC Sp. z o.o.",
-      nip: 1357924680,
-      regon: "246813579",
-      postalCode: "67-890",
-      city: "Gdańsk",
-      street: "ul. Mariacka 7",
-      phone: 456789123,
-      userId: 135790,
-      userRole: UserType.Klient,
-    },
-    {
-      firstName: "Jan",
-      lastName: "Kowalski",
-      companyName: "Przykładowa Firma",
-      nip: 1234567890,
-      regon: "123456789",
-      postalCode: "12-345",
-      city: "Warszawa",
-      street: "Aleje Jerozolimskie 123",
-      phone: 123456789,
-      userId: 987654,
-      userRole: UserType.Klient,
-    },
-    {
-      firstName: "Anna",
-      lastName: "Nowak",
-      companyName: "Inna Firma",
-      nip: 9876543210,
-      regon: "987654321",
-      postalCode: "54-321",
-      city: "Kraków",
-      street: "ul. Floriańska 12",
-      phone: 987654321,
-      userId: 123456,
-      userRole: UserType.Klient,
-    },
-    {
-      firstName: "Piotr",
-      lastName: "Wiśniewski",
-      companyName: "ABC Sp. z o.o.",
-      nip: 1357924680,
-      regon: "246813579",
-      postalCode: "67-890",
-      city: "Gdańsk",
-      street: "ul. Mariacka 7",
-      phone: 456789123,
-      userId: 135790,
-      userRole: UserType.Klient,
-    },
-  ];
-
   selectedUserDetails: UserDetails | null = null;
+
+  // userInfo: UserDetails[];
+
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+  ) {
+  }
+
+  ngOnInit(): void {
+    // this.loadUserInfo();
+    // loadOwnerInfo jest teraz wywoływane wewnątrz loadUserInfo, gdy dane są dostępne
+  }
+
+
+  // loadUserInfo(): void {
+  //   this.authService.getUserInfo().subscribe(
+  //     data => {
+  //       this.userInfo = data;
+  //       console.log(this.userInfo);
+  //       // Wywołaj loadOwnerInfo() tylko po pomyślnym załadowaniu userInfo
+  //       this.loadUserInfo();
+  //     },
+  //     error => {
+  //       console.error('Error fetching user info', error);
+  //     }
+  //   );
+  // }
+  //
+  // loadUserInfo(): void {
+  //   // Upewnij się, że userInfo jest zdefiniowane i posiada id
+  //   if (this.userInfo && this.userInfo.id) {
+  //     this.userService.getUserById(this.userInfo.id).subscribe(
+  //       data => {
+  //         this.userInfo = data;
+  //         console.log(this.userInfo);
+  //       },
+  //       error => {
+  //         console.error('Error fetching owner info', error);
+  //       }
+  //     );
+  //   } else {
+  //     console.warn('UserInfo is not loaded yet or missing ID');
+  //   }
+  // }
 
 
   onUserEditClick(userDetails: UserDetails) {

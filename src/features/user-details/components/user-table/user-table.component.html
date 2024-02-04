@@ -1,49 +1,49 @@
-<div class="table">
-  <div class="table__header">
-    <div class="table__header--name">Imię</div>
-    <div class="table__header--surname">Nazwisko</div>
-    <div class="table__header--company">Nazwa firmy</div>
-    <div class="table__header--nip">NIP</div>
-    <div class="table__header--regon">Regon</div>
-    <div class="table__header--postal">Kod pocztowy</div>
-    <div class="table__header--city">Miasto</div>
-    <div class="table__header--street">Ulica</div>
-    <div class="table__header--phone">Numer telefonu</div>
-    <div class="table__header--id">ID</div>
-    <div class="table__header--role">Rola</div>
-  </div>
-  <div class="table__content">
-    <div class="table__row" *ngFor="let detail of details">
-      <div class="table__row--cell-name">{{ detail.firstName }}</div>
-      <div class="table__row--cell-surname">{{ detail.lastName }}</div>
-      <div class="table__row--cell-company">{{ detail.companyName }}</div>
-      <div class="table__row--cell-nip">{{ detail.nip }}</div>
-      <div class="table__row--cell-regon">{{ detail.regon }}</div>
-      <div class="table__row--cell-postal">{{ detail.postalCode }}</div>
-      <div class="table__row--cell-city">{{ detail.city }}</div>
-      <div class="table__row--cell-street">{{ detail.street }}</div>
-      <div class="table__row--cell-phone">{{ detail.phone }}</div>
-      <div class="table__row--cell-id">{{ detail.userId }}</div>
-      <div class="table__row--cell-role">{{ detail.userRole }}</div>
-      <base-button (pointerClick)="onUserEditClick(detail)"
-        class="table__row--cell-edit"
-        kind="filled-shadow-white-blue"
-        font="tiny"
-        size="tiny"
-        padding="tiny">
-        EDYTUJ
-      </base-button>
-      <base-button (click)="onUserDeleteClick()"
-        class="table__row--cell-delete"
-        kind="filled-shadow-blue"
-        font="tiny"
-        size="tiny"
-        padding="tiny">
-        USUŃ
-      </base-button>
-    </div>
-  </div>
-</div>
+<!--<div class="table">-->
+<!--  <div class="table__header">-->
+<!--    <div class="table__header&#45;&#45;id">Id</div>-->
+<!--    <div class="table__header&#45;&#45;name">Nazwa</div>-->
+<!--    <div class="table__header&#45;&#45;email">Emial</div>-->
+<!--    <div class="table__header&#45;&#45;email-verified">Email zweryfikowany w </div>-->
+<!--    <div class="table__header&#45;&#45;role-id">Id roli</div>-->
+<!--    <div class="table__header&#45;&#45;created-at">Utworzony w </div>-->
+<!--    <div class="table__header&#45;&#45;updated-at">Zaaktualizowany w </div>-->
+<!--    <div class="table__header&#45;&#45;role">Rola</div>-->
+<!--    <div class="table__header&#45;&#45;phone"></div>-->
+<!--    <div class="table__header&#45;&#45;id">ID</div>-->
+<!--    <div class="table__header&#45;&#45;role">Rola</div>-->
+<!--  </div>-->
+<!--  <div class="table__content">-->
+<!--    <div class="table__row" *ngFor="let detail of userInfo">-->
+<!--      <div class="table__row&#45;&#45;cell-name">{{ detail.firstName }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-surname">{{ detail.lastName }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-company">{{ detail.companyName }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-nip">{{ detail.nip }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-regon">{{ detail.regon }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-postal">{{ detail.postalCode }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-city">{{ detail.city }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-street">{{ detail.street }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-phone">{{ detail.phone }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-id">{{ detail.userId }}</div>-->
+<!--      <div class="table__row&#45;&#45;cell-role">{{ detail.userRole }}</div>-->
+<!--      <base-button (pointerClick)="onUserEditClick(detail)"-->
+<!--        class="table__row&#45;&#45;cell-edit"-->
+<!--        kind="filled-shadow-white-blue"-->
+<!--        font="tiny"-->
+<!--        size="tiny"-->
+<!--        padding="tiny">-->
+<!--        EDYTUJ-->
+<!--      </base-button>-->
+<!--      <base-button (click)="onUserDeleteClick()"-->
+<!--        class="table__row&#45;&#45;cell-delete"-->
+<!--        kind="filled-shadow-blue"-->
+<!--        font="tiny"-->
+<!--        size="tiny"-->
+<!--        padding="tiny">-->
+<!--        USUŃ-->
+<!--      </base-button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
-<edit-user-data-form *ngIf="selectedUserDetails" [userEdit]="selectedUserDetails" (updateUser)="handleUpdate($event)"></edit-user-data-form>
+<!--<edit-user-data-form *ngIf="selectedUserDetails" [userEdit]="selectedUserDetails" (updateUser)="handleUpdate($event)"></edit-user-data-form>-->
