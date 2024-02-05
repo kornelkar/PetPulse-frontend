@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <form (submit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="number" class="form-control" id="id" [(ngModel)]="animalEdit.id" name="id" placeholder="ID" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="animalEdit.name" name="name" placeholder="Nazwa" required>
+    </div>
+    <div class="form-group">
+      <label for="microchip_number">Numer mikrochipu</label>
+      <input type="number" class="form-control" id="microchip_number" [(ngModel)]="animalEdit.microchip_number" name="microchip_number" placeholder="Numer mikrochipa">
+    </div>
+    <div class="form-group">
+      <label for="weight">Waga</label>
+      <input type="text" class="form-control" id="weight" [(ngModel)]="animalEdit.weight" name="weight" placeholder="Waga">
+    </div>
+    <div class="form-group">
+      <label for="age">Wiek</label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="animalEdit.age" name="age" placeholder="Wiek">
+    </div>
+    <div class="form-group">
+      <label for="color">Kolor</label>
+      <input type="text" class="form-control" id="color" [(ngModel)]="animalEdit.color" name="color" placeholder="Data utworzenia">
+    </div>
+    <div class="form-group">
+      <label for="gender">Płeć</label>
+      <input type="date" class="form-control" id="gender" [(ngModel)]="animalEdit.gender" name="gender" placeholder="Płeć">
+    </div>
+    <div class="form-group">
+      <label for="animal_type">Typ zwierzęcia</label>
+      <input type="text" class="form-control" id="animal_type" [(ngModel)]="animalEdit.animal_type" name="animal_type" placeholder="Rola">
+    </div>
+    <div class="form-group">
+      <label for="breed">Rasa</label>
+      <input type="text" class="form-control" id="breed" [(ngModel)]="animalEdit.breed" name="breed" placeholder="Rasa">
+    </div>
+    <div class="form-group">
+      <label for="owner">Właściciel</label>
+      <input type="text" class="form-control" id="owner" [(ngModel)]="animalEdit.owner" name="owner" placeholder="Właściciel">
+    </div>
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+  </form>
+</div>
