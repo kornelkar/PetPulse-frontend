@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <form (submit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="number" class="form-control" id="id" [(ngModel)]="userEdit.id" name="id" placeholder="ID" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="userEdit.name" name="name" placeholder="Nazwa" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" [(ngModel)]="userEdit.email" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="email_verified_at">Email zweryfikowany dnia</label>
+      <input type="date" class="form-control" id="email_verified_at" [(ngModel)]="userEdit.email_verified_at" name="emailVerified" placeholder="Email zweryfikowany dnia">
+    </div>
+    <div class="form-group">
+      <label for="role_id">Id Roli</label>
+      <input type="number" class="form-control" id="role_id" [(ngModel)]="userEdit.role_id" name="roleId" placeholder="Id Roli">
+    </div>
+    <div class="form-group">
+      <label for="created_at">Data utworzenia</label>
+      <input type="date" class="form-control" id="created_at" [(ngModel)]="userEdit.created_at" name="created_at" placeholder="Data utworzenia">
+    </div>
+    <div class="form-group">
+      <label for="updated_at">Data zaaktualizowania</label>
+      <input type="date" class="form-control" id="updated_at" [(ngModel)]="userEdit.updated_at" name="updated_at" placeholder="Data Zaaktualizowania">
+    </div>
+    <div class="form-group">
+      <label for="role">Rola</label>
+      <input type="text" class="form-control" id="role" [(ngModel)]="userEdit.role" name="role" placeholder="Rola">
+    </div>
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+  </form>
+</div>

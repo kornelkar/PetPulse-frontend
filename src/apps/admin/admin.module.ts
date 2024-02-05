@@ -11,8 +11,8 @@ import {TokenInterceptor} from "../../core/interceptor/token-interceptor";
 import {PetAdminPageComponent} from "../../core/components/pet-admin-page/pet-admin-page.component";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {
-  EditUserDataFormComponent
-} from "../../features/user-info/components/edit-user-data-form/edit-user-data-form.component";
+  EditOwnerDataFormComponent
+} from "../../features/user-info/components/edit-owner-data-form/edit-owner-data-form.component";
 
 @NgModule({
   declarations: [

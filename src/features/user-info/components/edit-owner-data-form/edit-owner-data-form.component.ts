@@ -4,10 +4,10 @@ import {OwnerInfo} from "../../../../core/models/owner-info.model";
 
 @Component({
   selector: 'edit-user-data-form',
-  templateUrl: './edit-user-data-form.component.html',
-  styleUrl: './edit-user-data-form.component.scss'
+  templateUrl: './edit-owner-data-form.component.html',
+  styleUrl: './edit-owner-data-form.component.scss'
 })
-export class EditUserDataFormComponent {
+export class EditOwnerDataFormComponent {
 @Input() userEdit!: OwnerInfo;
 
 @Output() updateUser: EventEmitter<OwnerInfo> = new EventEmitter();

@@ -1,0 +1,46 @@
+<div class="table">
+  <div class="table__header">
+    <div class="table__header--id">Id</div>
+    <div class="table__header--name">Nazwa</div>
+    <div class="table__header--email">Emial</div>
+    <div class="table__header--email-verified">Email zweryfikowany w </div>
+    <div class="table__header--role-id">Id roli</div>
+    <div class="table__header--created-at">Utworzony w </div>
+    <div class="table__header--updated-at">Zaaktualizowany w </div>
+    <div class="table__header--role">Rola</div>
+    <div class="table__header--phone"></div>
+    <div class="table__header--id">ID</div>
+    <div class="table__header--role">Rola</div>
+  </div>
+  <div class="table__content">
+    <div class="table__row" *ngFor="let detail of users">
+      <div class="table__row--cell-name">{{ detail.id }}</div>
+      <div class="table__row--cell-surname">{{ detail.name }}</div>
+      <div class="table__row--cell-company">{{ detail.email}}</div>
+      <div class="table__row--cell-nip">{{ detail.email_verified_at }}</div>
+      <div class="table__row--cell-regon">{{ detail.role_id }}</div>
+      <div class="table__row--cell-postal">{{ detail.created_at }}</div>
+      <div class="table__row--cell-city">{{ detail.updated_at }}</div>
+      <div class="table__row--cell-street">{{ detail.role }}</div>
+      <base-button (pointerClick)="onUserEditClick(detail)"
+        class="table__row--cell-edit"
+        kind="filled-shadow-white-blue"
+        font="tiny"
+        size="tiny"
+        padding="tiny">
+        EDYTUJ
+      </base-button>
+      <base-button (click)="onUserDeleteClick(detail.id)"
+                   class="table__row--cell-delete"
+                   kind="filled-shadow-blue"
+                   font="tiny"
+                   size="tiny"
+                   padding="tiny">
+        USUŃ
+      </base-button>
+    </div>
+  </div>
+</div>
+
+
+<edit-user-data-form *ngIf="selectedUserDetails" [userEdit]="selectedUserDetails" (updateUser)="handleUpdate($event)"></edit-user-data-form>

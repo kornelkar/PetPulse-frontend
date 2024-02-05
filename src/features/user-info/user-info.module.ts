@@ -5,13 +5,13 @@ import {SharedModule} from "../../shared/shared.module";
 import {BasicOwnerInfoTableComponent} from "./components/basic-owner-info-table/basic-owner-info-table.component";
 import {HttpClientModule} from "@angular/common/http";
 import {PetUserPageComponent} from "./containers/pet-user-page/pet-user-page.component";
-import {EditUserDataFormComponent} from "./components/edit-user-data-form/edit-user-data-form.component";
+import {EditOwnerDataFormComponent} from "./components/edit-owner-data-form/edit-owner-data-form.component";
 
 @NgModule({
   declarations: [
     BasicOwnerInfoTableComponent,
     PetUserPageComponent,
-    EditUserDataFormComponent,
+    EditOwnerDataFormComponent,
   ],
   imports: [
     CommonModule,

@@ -31,9 +31,9 @@ export class LoginPageComponent {
         // Logika sprawdzająca adres URL
         const path = this.location.path();
         console.log(path)
-        if (path.includes('/petpulse')) {
+        if (path.includes('/user/petpulse')) {
           this.router.navigate(['/basic-owner-info-table']);
-        } else if (path.includes('/admin/petpulse')) {
+        } else if (path.includes('/petpulse')) {
           this.router.navigate(['/pet-admin-page']);
         } else {
           // Przekierowanie domyślne lub obsługa błędu
