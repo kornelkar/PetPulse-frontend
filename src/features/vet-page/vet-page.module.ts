@@ -8,6 +8,7 @@ import {VetPageComponent} from "./containers/vet-page/vet-page.component";
 import {AnimalTableComponent} from "./components/animal-table/animal-table.component";
 import {VisitFormComponent} from "./components/visit-form/visit-form.component";
 import {EditAnimalDataFormComponent} from "./components/edit-animal-data-form/edit-animal-data-form.component";
+import {AddAnimalFormComponent} from "./components/add-animal-form/add-animal-form.component";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {EditAnimalDataFormComponent} from "./components/edit-animal-data-form/ed
     AnimalTableComponent,
     VisitFormComponent,
     EditAnimalDataFormComponent,
+    AddAnimalFormComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import {EditAnimalDataFormComponent} from "./components/edit-animal-data-form/ed
     AppointmentFormComponent,
     VetPageComponent,
     AnimalTableComponent,
+    VisitFormComponent,
   ]
 })
 export class VetPageModule {

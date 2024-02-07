@@ -42,4 +42,16 @@ export class AnimalService {
     return this.http.patch(url, animalData, httpOptions);
   }
 
+  createNewAnimal(animalData: AnimalInfo): Observable<any> {
+    const url = `${this.baseUrl}/create`;
+    // Utworzenie nagłówków z tokenem autoryzacyjnym
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken') // Pobierz token z localStorage
+      })
+    };
+    return this.http.post(url, animalData, httpOptions);
+  }
+
 }

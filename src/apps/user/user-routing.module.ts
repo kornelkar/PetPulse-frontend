@@ -17,11 +17,11 @@ const routes: Routes = [
     component: PetUserPageComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: 'basic-owner-info-table',
-    component: BasicOwnerInfoTableComponent,
-    canActivate: [AuthGuard]
-  },
+  // {
+  //   path: 'basic-owner-info-table',
+  //   component: BasicOwnerInfoTableComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: '**',
     component: LoginPageComponent,

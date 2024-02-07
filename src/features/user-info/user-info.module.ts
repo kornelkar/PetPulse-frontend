@@ -6,6 +6,7 @@ import {BasicOwnerInfoTableComponent} from "./components/basic-owner-info-table/
 import {HttpClientModule} from "@angular/common/http";
 import {PetUserPageComponent} from "./containers/pet-user-page/pet-user-page.component";
 import {EditOwnerDataFormComponent} from "./components/edit-owner-data-form/edit-owner-data-form.component";
+import {BasicAnimalInfoTableComponent} from "./components/basic-animal-info-table/basic-animal-info-table.component";
 
 @NgModule({
   declarations: [
@@ -13,13 +14,14 @@ import {EditOwnerDataFormComponent} from "./components/edit-owner-data-form/edit
     PetUserPageComponent,
     EditOwnerDataFormComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BasicAnimalInfoTableComponent,
+    ],
   providers: [],
   exports: [
     BasicOwnerInfoTableComponent,

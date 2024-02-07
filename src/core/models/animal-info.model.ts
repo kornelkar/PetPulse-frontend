@@ -31,3 +31,16 @@ export class AnimalBreed {
   createdAt?: string;
   updatedAt?: string;
 }
+
+
+export class NewAnimal {
+  name?: string;
+  microchip_number?: number;
+  weight?: number;
+  age?: number;
+  color?: string;
+  gender?: string;
+  animal_type_id?: number;
+  breed_id?: number;
+  owner_id?: number;
+}

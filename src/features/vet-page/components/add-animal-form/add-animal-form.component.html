@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="animalEdit.name" name="name" placeholder="Nazwa" required>
+    </div>
+
+    <div class="form-group">
+      <label for="microchip_number">Numer mikrochipu</label>
+      <input type="number" class="form-control" id="microchip_number" [(ngModel)]="animalEdit.microchip_number" name="microchip_number" placeholder="Numer mikrochipa">
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Waga</label>
+      <input type="number" class="form-control" id="weight" [(ngModel)]="animalEdit.weight" name="weight" placeholder="Waga">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Wiek</label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="animalEdit.age" name="age" placeholder="Wiek">
+    </div>
+
+    <div class="form-group">
+      <label for="color">Kolor</label>
+      <input type="text" class="form-control" id="color" [(ngModel)]="animalEdit.color" name="color" placeholder="Kolor">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Płeć</label>
+      <select class="form-control" id="gender" [(ngModel)]="animalEdit.gender" name="gender">
+        <option value="none">Nieokreślona</option>
+        <option value="male">Samiec</option>
+        <option value="female">Samica</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="animal_type_id">Typ zwierzęcia</label>
+      <input type="number" class="form-control" id="animal_type_id" [(ngModel)]="animalEdit.animal_type_id" name="animal_type_id" placeholder="Typ zwierzęcia">
+    </div>
+
+    <div class="form-group">
+      <label for="breed_id">Rasa</label>
+      <input type="number" class="form-control" id="breed_id" [(ngModel)]="animalEdit.breed_id" name="breed_id" placeholder="Rasa">
+    </div>
+
+    <div class="form-group">
+      <label for="owner_id">Właściciel</label>
+      <input type="number" class="form-control" id="owner_id" [(ngModel)]="animalEdit.owner_id" name="owner_id" placeholder="ID Właściciela">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Dodaj zwierzę</button>
+  </form>
+</div>

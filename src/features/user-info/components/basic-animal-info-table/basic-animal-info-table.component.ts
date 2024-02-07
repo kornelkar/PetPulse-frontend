@@ -1,34 +1,60 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AnimalInfo} from "../../../../core/models/animal-info.model";
+import {AnimalService} from "../../../../core/services/animal/animal.service";
+import {SharedModule} from "../../../../shared/shared.module";
+import {OwnerInfo} from "../../../../core/models/owner-info.model";
+import {OwnerService} from "../services/owner.service";
+import {AuthService} from "../../../../core/services/auth/auth.service";
 
 @Component({
   selector: 'basic-animal-info-table',
   standalone: true,
-  imports: [],
+  imports: [
+    SharedModule
+  ],
   templateUrl: './basic-animal-info-table.component.html',
   styleUrl: './basic-animal-info-table.component.scss'
 })
 export class BasicAnimalInfoTableComponent {
-  animals: AnimalInfo[] = [
-    {
-      id: 1,
-      name: "Luna",
-      microchip_number: 123456789012345,
-      weight: 50,
-      age: 5,
-      color: "black",
-      gender: "XYZ",
-      animal_type_id: 1,
-      created_at: "2024-01-29T18:58:03.000000Z",
-      updated_at: "2024-01-29T18:58:03.000000Z"
-    }
-  ];
+  selectedAnimalDetails: AnimalInfo | null = null;
 
-  // constructor(private animalService: AnimalService) { }
-  //
-  // ngOnInit(): void {
-  //   this.animalService.getAnimals().subscribe(data => {
-  //     this.animals = data;
-  //   });
-  // }
+  animal!: AnimalInfo;
+  ownerInfo!: OwnerInfo;
+  userInfo!: OwnerInfo
+
+  constructor(
+    private animalService: AnimalService,
+    private ownerService: OwnerService,
+    private authService: AuthService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.loadUserInfo();
+  }
+
+
+  loadOwnersAnimal(): void {
+    this.animalService.getAnimalById(1).subscribe(
+      (data: AnimalInfo) => {
+        this.animal = data;
+      },
+      error => {
+        console.error('Error fetching all users', error);
+      }
+    );
+  }
+
+  loadUserInfo(): void {
+    this.authService.getUserInfo().subscribe(
+      data => {
+        this.userInfo = data;
+        console.log(this.userInfo);
+        this.loadOwnersAnimal();
+      },
+      error => {
+        console.error('Error fetching user info', error);
+      }
+    );
+  }
 }

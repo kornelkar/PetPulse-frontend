@@ -32,10 +32,14 @@ export class LoginPageComponent {
         const path = this.location.path();
         console.log(path)
         if (path.includes('/user/petpulse')) {
-          this.router.navigate(['/basic-owner-info-table']);
-        } else if (path.includes('/petpulse')) {
+          this.router.navigate(['/pet-user-page']);
+        } else if (path.includes('/admin/petpulse')) {
           this.router.navigate(['/pet-admin-page']);
-        } else {
+        }
+        else if (path.includes('/petpulse')) {
+          this.router.navigate(['/vet-page']);
+        }
+        else {
           // Przekierowanie domyślne lub obsługa błędu
           console.error()
           // Tutaj możesz przekierować do strony domowej lub pokazać komunikat błędu

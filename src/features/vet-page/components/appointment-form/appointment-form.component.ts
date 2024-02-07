@@ -1,44 +1,49 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
+import {CalendarService} from "../../../../core/services/calendar/calendar.service";
 
 @Component({
   selector: 'appointment-form',
   templateUrl: './appointment-form.component.html',
-  styleUrl: './appointment-form.component.scss'
+  styleUrls: ['./appointment-form.component.scss'] // Poprawiono na styleUrls
 })
 export class AppointmentFormComponent implements OnInit {
+  @Input() animalId: number | null | undefined = null; // Przyjmuje animalId jako input
+  @Input() userId: number | null | undefined = null; // Przyjmuje userId jako input
+
   appointmentForm!: FormGroup;
 
-  // Załóżmy, że te dane są pobierane z serwisu lub API
-  owners = [{ id: 1, name: 'Jan Kowalski' }, { id: 2, name: 'Anna Nowak' }];
-  animals = [{ id: 1, owner_id: 1, name: 'Rex' }, { id: 2, owner_id: 2, name: 'Mruczek' }];
+  constructor(private fb: FormBuilder, private calendarService: CalendarService) {}
 
-  constructor(private fb: FormBuilder) { }
+  ngOnInit(): void {
+    this.initForm();
+    console.log(this.userId)
+    console.log(this.animalId)
+  }
 
-  ngOnInit() {
+  private initForm(): void {
     this.appointmentForm = this.fb.group({
-      owner: [''],
-      animal: [''],
-      visitPurpose: [''],
-      appointmentDateTime: [new Date()] // Połączone pole dla daty i godziny
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      start_date: ['', Validators.required],
+      end_date: ['', Validators.required],
+      user_id: [this.userId, ], // Ustawienie userId jeśli dostępne
+      animal_id: [this.animalId, Validators.required] // Ustawienie animalId jeśli dostępne
     });
   }
 
-  submit() {
-    const formValue = this.appointmentForm.value;
-    // Zakładając, że `appointmentDateTime` jest stringiem w formacie 'YYYY-MM-DDTHH:mm'
-    // np. wartość z inputa typu "datetime-local"
-
-    console.log(formValue.appointmentDateTime); // Wypisz wartość, aby zobaczyć format
-
-    // Nie potrzebujemy już ręcznie łączyć daty i czasu, ponieważ zakładamy, że są one już połączone w jednym polu formularza
-    const submitValue = {
-      ...formValue,
-      appointmentDateTime: new Date(formValue.appointmentDateTime) // Konwersja stringa na obiekt Date
-    };
-
-    console.log(submitValue);
-    // Tutaj możesz wysłać `submitValue` do backendu
+  submit(): void {
+    if (this.appointmentForm.valid) {
+      this.calendarService.createAppointment(this.appointmentForm.value).subscribe(
+        result => {
+          console.log('Wizyta została zapisana', result);
+          // Opcjonalnie: Wyczyść formularz lub przekieruj użytkownika
+        },
+        error => {
+          console.error('Wystąpił błąd podczas zapisywania wizyty', error);
+        }
+      );
+    }
   }
 }

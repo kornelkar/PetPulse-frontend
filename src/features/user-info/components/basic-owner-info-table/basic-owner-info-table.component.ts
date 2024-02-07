@@ -27,7 +27,6 @@ export class BasicOwnerInfoTableComponent implements OnInit {
       data => {
         this.userInfo = data;
         console.log(this.userInfo);
-        // Wywołaj loadOwnerInfo() tylko po pomyślnym załadowaniu userInfo
         this.loadOwnerInfo();
       },
       error => {
@@ -37,7 +36,6 @@ export class BasicOwnerInfoTableComponent implements OnInit {
   }
 
   loadOwnerInfo(): void {
-    // Upewnij się, że userInfo jest zdefiniowane i posiada id
     if (this.userInfo && this.userInfo.id) {
       this.ownerService.getOwnerById(this.userInfo.id).subscribe(
         data => {

@@ -1,32 +1,27 @@
-<!--<form class="appointment-form" [formGroup]="appointmentForm" (ngSubmit)="submit()">-->
-<!--  <div class="form-group">-->
-<!--    <label for="owner">Właściciel</label>-->
-<!--    <select class="form-control" formControlName="owner">-->
-<!--      <option *ngFor="let owner of owners" [value]="owner.id">{{ owner.name }}</option>-->
-<!--    </select>-->
-<!--  </div>-->
+<form class="appointment-form" [formGroup]="appointmentForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="name">Cel wizyty</label>
+    <input type="text" id="name" class="form-control" formControlName="name">
+  </div>
 
-<!--  <div class="form-group">-->
-<!--    <label for="animal">Zwierzę</label>-->
-<!--    <select class="form-control" formControlName="animal">-->
-<!--      <option *ngFor="let animal of animals" [value]="animal.id">{{ animal.name }}</option>-->
-<!--    </select>-->
-<!--  </div>-->
+  <div class="form-group">
+    <label for="description">Opis wizyty</label>
+    <input type="text" id="description" class="form-control" formControlName="description">
+  </div>
 
-<!--  <div class="form-group">-->
-<!--    <label for="visitPurpose">Cel wizyty</label>-->
-<!--    <input type="text" class="form-control" formControlName="visitPurpose">-->
-<!--  </div>-->
+  <div class="form-group">
+    <label for="start_date">Rozpoczęcie wizyty</label>
+    <input type="datetime-local" id="start_date" class="form-control" formControlName="start_date">
+  </div>
 
-<!--  <div class="form-group">-->
-<!--    <label for="appointmentDate">Data wizyty</label>-->
-<!--    <input type="text" class="form-control" bsDatepicker formControlName="appointmentDate">-->
-<!--  </div>-->
+  <div class="form-group">
+    <label for="end_date">Zakończenie wizyty</label>
+    <input type="datetime-local" id="end_date" class="form-control" formControlName="end_date">
+  </div>
 
-<!--  <div class="form-group">-->
-<!--    <label for="appointmentDateTime">Data i godzina wizyty</label>-->
-<!--    <input type="datetime-local" class="form-control" formControlName="appointmentDateTime">-->
-<!--  </div>-->
+  <!-- Usunięcie selektorów, zastąpienie ich ukrytymi polami -->
+  <input type="hidden" formControlName="user_id">
+  <input type="hidden" formControlName="animal_id">
 
-<!--  <button type="submit" class="btn btn-primary">Zapisz wizytę</button>-->
-<!--</form>-->
+  <button type="submit" class="btn btn-primary">Zapisz wizytę</button>
+</form>
