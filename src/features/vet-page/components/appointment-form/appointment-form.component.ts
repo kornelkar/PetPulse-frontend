@@ -9,8 +9,8 @@ import {CalendarService} from "../../../../core/services/calendar/calendar.servi
   styleUrls: ['./appointment-form.component.scss'] // Poprawiono na styleUrls
 })
 export class AppointmentFormComponent implements OnInit {
-  @Input() animalId: number | null | undefined = null; // Przyjmuje animalId jako input
-  @Input() userId: number | null | undefined = null; // Przyjmuje userId jako input
+  @Input() animalId: number | null | undefined = null;
+  @Input() userId: number | null | undefined = null;
 
   appointmentForm!: FormGroup;
 
@@ -28,8 +28,8 @@ export class AppointmentFormComponent implements OnInit {
       description: ['', Validators.required],
       start_date: ['', Validators.required],
       end_date: ['', Validators.required],
-      user_id: [this.userId, ], // Ustawienie userId jeśli dostępne
-      animal_id: [this.animalId, Validators.required] // Ustawienie animalId jeśli dostępne
+      user_id: [this.userId, ],
+      animal_id: [this.animalId, Validators.required]
     });
   }
 

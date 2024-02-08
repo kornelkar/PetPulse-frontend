@@ -3,7 +3,6 @@ import {AnimalInfo} from "../../../../core/models/animal-info.model";
 import {AnimalService} from "../../../../core/services/animal/animal.service";
 import {Calendar} from "../../../../core/models/calendar.model";
 import {AuthService} from "../../../../core/services/auth/auth.service";
-import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'animal-table',

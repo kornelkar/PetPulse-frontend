@@ -1,67 +1,52 @@
-<button (click)="onNewAnimal()">Dodaj nowe zwierze</button>
+<!--<button (click)="onNewAnimal()">Dodaj nowe zwierze</button>-->
 
-<add-animal-form *ngIf="isAddingAnimal"></add-animal-form>
-
+<!--<add-animal-form *ngIf="isAddingAnimal"></add-animal-form>-->
+<h1>Zaplanowane Wizyty</h1>
 <div class="table">
   <div class="table__header">
-    <div class="table__header--id">Id</div>
-    <div class="table__header--name">Nazwa</div>
-    <div class="table__header--microchip">Numer mikrochipu</div>
-    <div class="table__header--weight">Waga </div>
-    <div class="table__header--age">Wiek</div>
-    <div class="table__header--color">Kolor</div>
-    <div class="table__header--gender">Płeć</div>
-    <div class="table__header--type">Typ Zwierzęcia</div>
-    <div class="table__header--breed">Rasa</div>
-    <div class="table__header--owner">Właściciel</div>
-    <div class="table__header--role"></div>
+    <div class="table__header--id">ID wizyty</div>
+    <div class="table__header--name">Nazwa wizyty</div>
+    <div class="table__header--description">Opis wizyty</div>
+    <div class="table__header--status">Status</div>
+    <div class="table__header--animal-id">ID zwierzęcia</div>
+    <div class="table__header--start-date">Czas rozpoczęcia wizyty</div>
+    <div class="table__header--end-date">Czas zakończenia wizyty</div>
   </div>
   <div class="table__content">
-    <div class="table__row" *ngFor="let detail of animals">
-      <div class="table__row--cell-name">{{ detail.id }}</div>
-      <div class="table__row--cell-surname">{{ detail.name }}</div>
-      <div class="table__row--cell-company">{{ detail.microchip_number}}</div>
-      <div class="table__row--cell-nip">{{ detail.weight }}</div>
-      <div class="table__row--cell-regon">{{ detail.age }}</div>
-      <div class="table__row--cell-postal">{{ detail.color }}</div>
-      <div class="table__row--cell-city">{{ detail.gender }}</div>
-      <div class="table__row--cell-street">{{ detail.animal_type }}</div>
-      <div class="table__row--cell-street">{{ detail.breed }}</div>
-      <div class="table__row--cell-street">{{ detail.owner }}</div>
-      <base-button (pointerClick)="onAnimalEditClick(detail)"
+    <div class="table__row" *ngFor="let detail of visits">
+      <div class="table__row--cell-id">{{ detail.id }}</div>
+      <div class="table__row--cell-name">{{ detail.name }}</div>
+      <div class="table__row--cell-description">{{ detail.description}}</div>
+      <div class="table__row--cell-status">{{ detail.status }}</div>
+      <div class="table__row--cell-animal-id">{{ detail.animal_id }}</div>
+      <div class="table__row--cell-start-date">{{ detail.start_date }}</div>
+      <div class="table__row--cell-edn-date">{{ detail.end_date }}</div>
+      <base-button (pointerClick)="onVisitEditClick(detail)"
                    class="table__row--cell-edit"
                    kind="filled-shadow-white-blue"
                    font="tiny"
                    size="tiny"
                    padding="tiny">
-        EDYTUJ
+        Edytuj wizytę
       </base-button>
-      <base-button *ngIf="detail.id" (pointerClick)="onBookVisitClick(detail)"
+      <base-button *ngIf="detail.id" (pointerClick)="onStartVisitClick(detail)"
                    class="table__row--cell-edit"
                    kind="filled-shadow-white-blue"
                    font="tiny"
                    size="tiny"
                    padding="tiny">
-        ZAPLANUJ WIZYTĘ
+        Zrealizuj wizytę
       </base-button>
-      <!--      <base-button (click)="onUserDeleteClick(detail.id)"-->
-      <!--                   class="table__row&#45;&#45;cell-delete"-->
-      <!--                   kind="filled-shadow-blue"-->
-      <!--                   font="tiny"-->
-      <!--                   size="tiny"-->
-      <!--                   padding="tiny">-->
-      <!--        USUŃ-->
-      <!--      </base-button>-->
     </div>
   </div>
 </div>
 
 
-<edit-animal-data-form *ngIf="selectedAnimalDetails" [animalEdit]="selectedAnimalDetails" (updateAnimal)="handleUpdate($event)"></edit-animal-data-form>
+<visit-form *ngIf="selectedVisitDetails" [visitId]="selectedVisitDetails.id" (updateVisit)="updateVisitDetails($event)"></visit-form>
 
 
-<appointment-form *ngIf="selectedAnimalVisit && userId"
-                  [animalId]="selectedAnimalVisit.animal_id"
-                  [userId]="userId"></appointment-form>
+<!--<appointment-form *ngIf="selectedAnimalVisit && userId"-->
+<!--                  [animalId]="selectedAnimalVisit.animal_id"-->
+<!--                  [userId]="userId"></appointment-form>-->
 
 

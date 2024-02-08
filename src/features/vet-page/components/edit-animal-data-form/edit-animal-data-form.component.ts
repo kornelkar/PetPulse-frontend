@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {UserDetails} from "../../../user-details/models/user-details.model";
 import {AnimalInfo} from "../../../../core/models/animal-info.model";
 
 @Component({

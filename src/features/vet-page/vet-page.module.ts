@@ -9,6 +9,7 @@ import {AnimalTableComponent} from "./components/animal-table/animal-table.compo
 import {VisitFormComponent} from "./components/visit-form/visit-form.component";
 import {EditAnimalDataFormComponent} from "./components/edit-animal-data-form/edit-animal-data-form.component";
 import {AddAnimalFormComponent} from "./components/add-animal-form/add-animal-form.component";
+import {PlannedVisitsTableComponent} from "./components/planned-visits-table/planned-visits-table.component";
 
 
 @NgModule({
@@ -19,14 +20,15 @@ import {AddAnimalFormComponent} from "./components/add-animal-form/add-animal-fo
     VisitFormComponent,
     EditAnimalDataFormComponent,
     AddAnimalFormComponent,
+    PlannedVisitsTableComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   exports: [
     AppointmentFormComponent,
