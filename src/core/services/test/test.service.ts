@@ -10,8 +10,20 @@ export class TestResultsService {
 
   constructor(private http: HttpClient) { }
 
-  getTestByAnimalId(id: number): Observable<any> {
-    const url = `${this.baseUrl}/${id}`;
+  getAllTestResults(): Observable<any> {
+    const url = `${this.baseUrl}`;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+      })
+    };
+
+    return this.http.get(url, httpOptions);
+  }
+
+  getTestResultsByAnimalId(animalId: number | undefined): Observable<any> {
+    const url = `${this.baseUrl}/animal/${animalId}`;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -25,10 +37,7 @@ export class TestResultsService {
   createTestResult(testData: {
     name: string,
     description: string,
-    start_date: string,
-    end_date: string,
     animal_id: number,
-    visit_id: number
   }): Observable<any> {
     const url = `${this.baseUrl}/create`;
     const httpOptions = {

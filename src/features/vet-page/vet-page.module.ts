@@ -10,6 +10,8 @@ import {VisitFormComponent} from "./components/visit-form/visit-form.component";
 import {EditAnimalDataFormComponent} from "./components/edit-animal-data-form/edit-animal-data-form.component";
 import {AddAnimalFormComponent} from "./components/add-animal-form/add-animal-form.component";
 import {PlannedVisitsTableComponent} from "./components/planned-visits-table/planned-visits-table.component";
+import {TestsTableComponent} from "./components/tests-table/tests-table.component";
+import {AddTestFormComponent} from "./components/add-test-form/add-test-form.component";
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import {PlannedVisitsTableComponent} from "./components/planned-visits-table/pla
     EditAnimalDataFormComponent,
     AddAnimalFormComponent,
     PlannedVisitsTableComponent,
+    TestsTableComponent,
+    AddTestFormComponent
   ],
     imports: [
         CommonModule,

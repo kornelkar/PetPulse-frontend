@@ -3,6 +3,7 @@ import {AnimalInfo} from "../../../../core/models/animal-info.model";
 import {AnimalService} from "../../../../core/services/animal/animal.service";
 import {Calendar} from "../../../../core/models/calendar.model";
 import {AuthService} from "../../../../core/services/auth/auth.service";
+import {TestResult} from "../../../../core/models/test-result.model";
 
 @Component({
   selector: 'animal-table',
@@ -12,6 +13,8 @@ import {AuthService} from "../../../../core/services/auth/auth.service";
 export class AnimalTableComponent {
   selectedAnimalDetails: AnimalInfo | null = null;
   selectedAnimalVisit: Calendar | null | undefined = null;
+  selectedAnimalTests: TestResult | null = null;
+  selectedAnimalAddTest: TestResult | null = null;
   userId: number | null = null;
 
   animals!: AnimalInfo[];
@@ -79,5 +82,18 @@ export class AnimalTableComponent {
         console.error('Wystąpił błąd podczas aktualizacji', error);
       }
     );
+  }
+
+  onViewTestsClick(animalTestResult: AnimalInfo): void {
+    this.selectedAnimalTests = {
+      animal_id: animalTestResult.id
+    };
+    console.log(this.selectedAnimalTests)
+  }
+
+  onAddTestClick(animalAddTestResult: AnimalInfo): void {
+this.selectedAnimalAddTest = {
+  animal_id: animalAddTestResult.id
+}
   }
 }
