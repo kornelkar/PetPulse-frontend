@@ -39,6 +39,7 @@ import {AddTestFormComponent} from "./components/add-test-form/add-test-form.com
     VetPageComponent,
     AnimalTableComponent,
     VisitFormComponent,
+    TestsTableComponent,
   ]
 })
 export class VetPageModule {

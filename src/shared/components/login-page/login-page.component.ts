@@ -40,14 +40,11 @@ export class LoginPageComponent {
           this.router.navigate(['/vet-page']);
         }
         else {
-          // Przekierowanie domyślne lub obsługa błędu
           console.error()
-          // Tutaj możesz przekierować do strony domowej lub pokazać komunikat błędu
         }
       },
       error => {
         console.error('Error logging in', error);
-        // Handle login error
       }
     );
   }

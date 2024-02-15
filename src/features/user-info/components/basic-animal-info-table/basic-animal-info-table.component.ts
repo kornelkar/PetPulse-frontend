@@ -5,18 +5,22 @@ import {SharedModule} from "../../../../shared/shared.module";
 import {OwnerInfo} from "../../../../core/models/owner-info.model";
 import {OwnerService} from "../services/owner.service";
 import {AuthService} from "../../../../core/services/auth/auth.service";
+import {VetPageModule} from "../../../vet-page/vet-page.module";
+import {TestResult} from "../../../../core/models/test-result.model";
 
 @Component({
   selector: 'basic-animal-info-table',
   standalone: true,
   imports: [
-    SharedModule
+    SharedModule,
+    VetPageModule
   ],
   templateUrl: './basic-animal-info-table.component.html',
   styleUrl: './basic-animal-info-table.component.scss'
 })
 export class BasicAnimalInfoTableComponent {
   selectedAnimalDetails: AnimalInfo | null = null;
+  selectedAnimalTests: TestResult | null = null;
 
   animal!: AnimalInfo;
   ownerInfo!: OwnerInfo;
@@ -35,7 +39,7 @@ export class BasicAnimalInfoTableComponent {
 
 
   loadOwnersAnimal(): void {
-    this.animalService.getAnimalById(1).subscribe(
+    this.animalService.getAnimalById(this.userInfo.id).subscribe(
       (data: AnimalInfo) => {
         this.animal = data;
       },
@@ -56,5 +60,12 @@ export class BasicAnimalInfoTableComponent {
         console.error('Error fetching user info', error);
       }
     );
+  }
+
+  onViewTestsClick(animalTestResult: AnimalInfo): void {
+    this.selectedAnimalTests = {
+      animal_id: animalTestResult.id
+    };
+    console.log(this.selectedAnimalTests)
   }
 }

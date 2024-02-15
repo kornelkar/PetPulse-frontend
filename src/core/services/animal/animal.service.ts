@@ -44,7 +44,6 @@ export class AnimalService {
 
   createNewAnimal(animalData: AnimalInfo): Observable<any> {
     const url = `${this.baseUrl}/create`;
-    // Utworzenie nagłówków z tokenem autoryzacyjnym
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

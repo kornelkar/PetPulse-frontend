@@ -30,16 +30,22 @@
       <input type="text" class="form-control" id="gender" [(ngModel)]="animalEdit.gender" name="gender" placeholder="Płeć">
     </div>
     <div class="form-group">
-      <label for="animal_type">Typ zwierzęcia</label>
-      <input type="text" class="form-control" id="animal_type" [(ngModel)]="animalEdit.animal_type" name="animal_type" placeholder="Rola">
+      <label for="animal_type_id">Typ zwierzęcia</label>
+      <select class="form-control" id="animal_type_id" [(ngModel)]="animalEdit.animal_type_id" name="animal_type_id">
+        <option value="" disabled>Wybierz typ zwierzęcia</option>
+        <option *ngFor="let type of animalTypes" [value]="type.id">{{ type.name }}</option>
+      </select>
     </div>
     <div class="form-group">
-      <label for="breed">Rasa</label>
-      <input type="text" class="form-control" id="breed" [(ngModel)]="animalEdit.breed" name="breed" placeholder="Rasa">
+      <label for="breed_id">Rasa</label>
+      <select class="form-control" id="breed_id" [(ngModel)]="animalEdit.breed_id" name="breed_id">
+        <option value="" disabled>Wybierz rasę zwierzęcia</option>
+        <option *ngFor="let breed of animalBreeds" [value]="breed.id">{{ breed.name }}</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="owner">Właściciel</label>
-      <input type="text" class="form-control" id="owner" [(ngModel)]="animalEdit.owner" name="owner" placeholder="Właściciel">
+      <input type="text" class="form-control" id="owner" [(ngModel)]="animalEdit.owner!.user_id!" name="owner" placeholder="Właściciel">
     </div>
     <button type="submit" class="btn btn-primary">Zapisz</button>
   </form>

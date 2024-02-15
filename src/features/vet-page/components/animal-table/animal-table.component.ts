@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
-import {AnimalInfo} from "../../../../core/models/animal-info.model";
+import {AnimalBreed, AnimalInfo, AnimalType} from "../../../../core/models/animal-info.model";
 import {AnimalService} from "../../../../core/services/animal/animal.service";
 import {Calendar} from "../../../../core/models/calendar.model";
 import {AuthService} from "../../../../core/services/auth/auth.service";
 import {TestResult} from "../../../../core/models/test-result.model";
+import {AnimalTypeService} from "../../../../core/services/animal/animal-type.service";
+import {AnimalBreedService} from "../../../../core/services/animal/animal-breed.service";
 
 @Component({
   selector: 'animal-table',
@@ -17,6 +19,8 @@ export class AnimalTableComponent {
   selectedAnimalAddTest: TestResult | null = null;
   userId: number | null = null;
 
+  animalTypes!: AnimalType[];
+  animalBreeds!: AnimalBreed[];
   animals!: AnimalInfo[];
 
   isAddingAnimal = false;
@@ -24,22 +28,32 @@ export class AnimalTableComponent {
   constructor(
     private animalService: AnimalService,
     private authService: AuthService,
+    private animalTypeService: AnimalTypeService,
+    private animalBreedService: AnimalBreedService,
   ) {
   }
 
   ngOnInit(): void {
-    this.loadAllAnimals();
     this.getUserInfo();
+    this.loadAllAnimals();
   }
 
 
   loadAllAnimals(): void {
     this.animalService.getAllAnimals().subscribe(
-      (data: AnimalInfo[]) => {
-        this.animals = data;
+      (animals: AnimalInfo[]) => {
+        // Upewnij się, że typy zwierząt zostały już załadowane
+        if (this.animalTypes && this.animalTypes.length > 0) {
+          animals.forEach(animal => {
+            // Przypisz `animal_type` na podstawie `animal_type_id`
+            animal.animal_type = this.animalTypes.find(type => type.id === animal.animal_type_id);
+            console.log('przypisane')
+          });
+        }
+        this.animals = animals;
       },
       error => {
-        console.error('Error fetching all users', error);
+        console.error('Error fetching all animals', error);
       }
     );
   }
@@ -53,6 +67,27 @@ export class AnimalTableComponent {
       },
       error: (error) => {
         console.error('Error fetching user info', error);
+      }
+    });
+  }
+
+  loadAnimalTypes(): void {
+    this.animalTypeService.getAnimalTypes().subscribe({
+      next: (data) => {
+        this.animalTypes = data;
+        console.log('animal types:', this.animalTypes);
+      },
+      error: (error) => console.error(error),
+    });
+  }
+
+  loadAnimalBreeds(): void {
+    this.animalBreedService.getAnimalBreeds().subscribe({
+      next: (breeds) => {
+        this.animalBreeds = breeds;
+      },
+      error: (error) => {
+        console.error('Error fetching animal breeds', error);
       }
     });
   }
@@ -92,8 +127,8 @@ export class AnimalTableComponent {
   }
 
   onAddTestClick(animalAddTestResult: AnimalInfo): void {
-this.selectedAnimalAddTest = {
-  animal_id: animalAddTestResult.id
-}
+    this.selectedAnimalAddTest = {
+      animal_id: animalAddTestResult.id
+    }
   }
 }

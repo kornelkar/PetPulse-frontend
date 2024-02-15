@@ -1,13 +1,13 @@
 <h1>Lista wszystkich zwierząt</h1>
 
-<button (click)="onNewAnimal()">Dodaj nowe zwierze</button>
+<button (click)="onNewAnimal()" class="btn btn-primary">Dodaj nowe zwierze</button>
 
 <add-animal-form *ngIf="isAddingAnimal"></add-animal-form>
 
 <div class="table">
   <div class="table__header">
     <div class="table__header--id">Id</div>
-    <div class="table__header--name">Nazwa</div>
+    <div class="table__header--name">Imię</div>
     <div class="table__header--microchip">Numer mikrochipu</div>
     <div class="table__header--weight">Waga</div>
     <div class="table__header--age">Wiek</div>
@@ -27,9 +27,9 @@
       <div class="table__row--cell-regon">{{ detail.age }}</div>
       <div class="table__row--cell-postal">{{ detail.color }}</div>
       <div class="table__row--cell-city">{{ detail.gender }}</div>
-      <div class="table__row--cell-street">{{ detail.animal_type }}</div>
-      <div class="table__row--cell-street">{{ detail.breed }}</div>
-      <div class="table__row--cell-street">{{ detail.owner }}</div>
+      <div class="table__row--cell-street">{{ detail.animal_type!.name }}</div>
+      <div class="table__row--cell-street">{{ detail.breed!.name }}</div>
+      <div class="table__row--cell-street">{{ detail.owner?.first_name }} {{ detail.owner?.last_name }}</div>
       <base-button (pointerClick)="onAnimalEditClick(detail)"
                    class="table__row--cell-edit"
                    kind="filled-shadow-white-blue"

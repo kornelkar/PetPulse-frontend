@@ -6,7 +6,7 @@ import {CalendarService} from "../../../../core/services/calendar/calendar.servi
 @Component({
   selector: 'appointment-form',
   templateUrl: './appointment-form.component.html',
-  styleUrls: ['./appointment-form.component.scss'] // Poprawiono na styleUrls
+  styleUrls: ['./appointment-form.component.scss']
 })
 export class AppointmentFormComponent implements OnInit {
   @Input() animalId: number | null | undefined = null;
@@ -38,7 +38,6 @@ export class AppointmentFormComponent implements OnInit {
       this.calendarService.createAppointment(this.appointmentForm.value).subscribe(
         result => {
           console.log('Wizyta została zapisana', result);
-          // Opcjonalnie: Wyczyść formularz lub przekieruj użytkownika
         },
         error => {
           console.error('Wystąpił błąd podczas zapisywania wizyty', error);

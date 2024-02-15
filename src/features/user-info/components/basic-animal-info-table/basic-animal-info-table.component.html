@@ -13,17 +13,33 @@
     <div class="table__header--role"></div>
   </div>
   <div class="table__content">
-    <div class="table__row">
-      <div class="table__row--cell-name">{{ animal.id }}</div>
-      <div class="table__row--cell-surname">{{ animal.name }}</div>
-      <div class="table__row--cell-company">{{ animal.microchip_number}}</div>
-      <div class="table__row--cell-nip">{{ animal.weight }}</div>
-      <div class="table__row--cell-regon">{{ animal.age }}</div>
-      <div class="table__row--cell-postal">{{ animal.color }}</div>
-      <div class="table__row--cell-city">{{ animal.gender }}</div>
-      <div class="table__row--cell-street">{{ animal.animal_type }}</div>
-      <div class="table__row--cell-street">{{ animal.breed }}</div>
-      <div class="table__row--cell-street">{{ animal.owner }}</div>
+    <div class="table__row" *ngIf="let detail of animal">
+      <div class="table__row--cell-name">{{ detail.id }}</div>
+      <div class="table__row--cell-surname">{{ detail.name }}</div>
+      <div class="table__row--cell-company">{{ detail.microchip_number}}</div>
+      <div class="table__row--cell-nip">{{ detail.weight }}</div>
+      <div class="table__row--cell-regon">{{ detail.age }}</div>
+      <div class="table__row--cell-postal">{{ detail.color }}</div>
+      <div class="table__row--cell-city">{{ detail.gender }}</div>
+      <div class="table__row--cell-street">{{ detail.animal_type }}</div>
+      <div class="table__row--cell-street">{{ detail.breed }}</div>
+      <div class="table__row--cell-street">{{ detail.owner }}</div>
+      <base-button (click)="onViewTestsClick(detail)"
+                   class="table__row--cell-view"
+                   kind="filled-shadow-blue"
+                   font="tiny"
+                   size="tiny"
+                   padding="tiny">
+        WYNIKI BADAŃ
+      </base-button>
     </div>
   </div>
 </div>
+
+<!--  [animalId]="selectedAnimalTests.animal_id">--
+<!--</tests-table>-->
+
+<tests-table
+  *ngIf="selectedAnimalTests"></tests-table>
+
+

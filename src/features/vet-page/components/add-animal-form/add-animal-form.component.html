@@ -36,12 +36,18 @@
 
     <div class="form-group">
       <label for="animal_type_id">Typ zwierzęcia</label>
-      <input type="text" class="form-control" id="animal_type_id" [(ngModel)]="animalEdit.animal_type_id" name="animal_type_id" placeholder="Typ zwierzęcia">
+      <select class="form-control" id="animal_type_id" [(ngModel)]="animalEdit.animal_type_id" name="animal_type_id">
+        <option value="" disabled selected>Wybierz typ zwierzęcia</option>
+        <option *ngFor="let type of animalTypes" [value]="type.id">{{ type.name }}</option>
+      </select>
     </div>
 
     <div class="form-group">
-      <label for="breed_id">Rasa</label>
-      <input type="text" class="form-control" id="breed_id" [(ngModel)]="animalEdit.breed_id" name="breed_id" placeholder="Rasa">
+      <label for="breed_id">Rasa zwierzęcia</label>
+      <select class="form-control" id="breed_id" [(ngModel)]="animalEdit.breed_id" name="breed_id">
+        <option value="" disabled selected>Wybierz rasę zwierzęcia</option>
+        <option *ngFor="let breed of animalBreeds" [value]="breed.id">{{ breed.name }}</option>
+      </select>
     </div>
 
     <div class="form-group">
