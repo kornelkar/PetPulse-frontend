@@ -1,0 +1,11 @@
+<div class="list-group">
+  <h2>Czaty</h2>
+  <a *ngFor="let room of chatRooms"
+     class="list-group-item list-group-item-action"
+     (click)="openChat(room.id)">
+    Pokój: {{ room.first_name }} {{ room.last_name }}
+  </a>
+</div>
+
+<!-- Tutaj gdzieś w szablonie umieść komponent czatu, który będzie się przełączał -->
+<chat-room *ngIf="isChatActive" [roomId]="activeRoomId"></chat-room>

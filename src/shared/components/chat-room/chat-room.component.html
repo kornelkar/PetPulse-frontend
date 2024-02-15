@@ -1,0 +1,13 @@
+<div class="chat-container">
+  <div class="chat-messages p-3 mb-3" style="height: 400px; overflow-y: scroll;">
+    <div *ngFor="let message of messages" class="message mb-2" #chatContainer>
+      <div class="p-2 bg-light border rounded">
+        <strong>{{ message.user_id }}:</strong> {{ message.message }}
+      </div>
+    </div>
+  </div>
+  <div class="chat-form">
+    <textarea class="form-control mb-3" [(ngModel)]="newMessage" placeholder="Wpisz wiadomość..."></textarea>
+    <button (click)="sendMessage()" class="btn btn-primary">Wyślij</button>
+  </div>
+</div>
