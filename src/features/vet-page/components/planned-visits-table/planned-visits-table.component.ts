@@ -59,7 +59,6 @@ export class PlannedVisitsTableComponent implements OnInit {
       },
       error: (error) => {
         console.error('Wystąpił błąd podczas aktualizacji wizyty', error);
-        // Obsługa błędów, np. wyświetlenie komunikatu o błędzie
       }
     });
   }

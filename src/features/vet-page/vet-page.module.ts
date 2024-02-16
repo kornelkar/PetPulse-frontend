@@ -34,13 +34,14 @@ import {AddTestFormComponent} from "./components/add-test-form/add-test-form.com
         ReactiveFormsModule,
     ],
   providers: [],
-  exports: [
-    AppointmentFormComponent,
-    VetPageComponent,
-    AnimalTableComponent,
-    VisitFormComponent,
-    TestsTableComponent,
-  ]
+    exports: [
+        AppointmentFormComponent,
+        VetPageComponent,
+        AnimalTableComponent,
+        VisitFormComponent,
+        TestsTableComponent,
+        PlannedVisitsTableComponent,
+    ]
 })
 export class VetPageModule {
 }

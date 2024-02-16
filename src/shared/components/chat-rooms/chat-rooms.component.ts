@@ -32,7 +32,7 @@ export class ChatRoomsComponent implements OnInit {
   openChat(roomId?: number): void {
     this.isChatActive = true;
     this.activeRoomId = roomId;
-    this.chatSelected.emit(roomId); // Emituj wydarzenie z wybranym id pokoju
+    this.chatSelected.emit(roomId);
   }
 }
 

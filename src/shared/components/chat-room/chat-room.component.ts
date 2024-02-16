@@ -24,7 +24,6 @@ export class ChatRoomComponent implements OnInit {
   ) {}
 
   ngOnChanges(): void {
-    // Załaduj wiadomości za każdym razem, gdy zmieni się roomId
     if (this.roomId) {
       this.loadMessages();
     }
