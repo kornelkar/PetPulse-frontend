@@ -49,8 +49,6 @@ export class ChatRoomComponent implements OnInit {
   sendMessage() {
     if (!this.newMessage.trim()) return;
 
-    // Tu zakładamy, że this.messages jest już zdefiniowane.
-    // Jeśli istnieje możliwość, że this.messages jest undefined, należy to sprawdzić.
     const toUserId = this.messages && this.messages.length > 0 ? this.messages[0].to_user_id : null;
     if (!toUserId) {
       // Obsłuż przypadki, gdy nie ma `to_user_id`, może wyświetlając komunikat użytkownikowi.
@@ -59,11 +57,10 @@ export class ChatRoomComponent implements OnInit {
 
     this.chatService.sendMessage(toUserId, this.newMessage, this.roomId).subscribe({
       next: (data) => {
-        // Przy założeniu, że 'data' jest obiektem typu 'Message'.
         this.messages?.push(data);
-        this.changeDetectorRef.detectChanges(); // Zgłoś wykrywanie zmian, jeśli to konieczne.
-        this.scrollToBottom(); // Przewiń do nowej wiadomości, jeśli masz tę metodę zdefiniowaną.
-        this.newMessage = ''; // Wyczyść pole wprowadzania.
+        this.changeDetectorRef.detectChanges(); // Zgłoś wykrywanie zmian
+        this.scrollToBottom(); // Przewiń do nowej wiadomości
+        this.newMessage = '';
       },
       error: (error) => console.error(error)
     });

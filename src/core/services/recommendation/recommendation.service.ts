@@ -26,10 +26,7 @@ export class RecommendationService {
   createRecommendation(recommendationData: {
     name: string,
     description: string,
-    start_date: string,
-    end_date: string,
     animal_id: number,
-    visit_id: number
   }): Observable<any> {
     const url = `${this.baseUrl}/create`;
     const httpOptions = {

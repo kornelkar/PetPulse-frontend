@@ -56,7 +56,6 @@ export class PlannedVisitsTableComponent implements OnInit {
     this.visitService.updateVisit(updateVisit.id!, updateVisit).subscribe({
       next: (response) => {
         console.log('Wizyta została zaktualizowana', response);
-        // Tutaj możesz dodać logikę po pomyślnej aktualizacji, np. przekierowanie lub wyświetlenie komunikatu
       },
       error: (error) => {
         console.error('Wystąpił błąd podczas aktualizacji wizyty', error);
@@ -73,6 +72,7 @@ this.selectedVisitDetails = visitInfo;
   onStartVisitClick(visitInfo: VisitInfo): void {
     this.selectedVisitDetails = {
       id: visitInfo.id,
+      animal_id: visitInfo.animal_id
     };
   }
 }

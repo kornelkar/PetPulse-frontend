@@ -42,7 +42,7 @@
 </div>
 
 
-<visit-form *ngIf="selectedVisitDetails" [visitId]="selectedVisitDetails.id" (updateVisit)="updateVisitDetails($event)"></visit-form>
+<visit-form *ngIf="selectedVisitDetails" [visitId]="selectedVisitDetails.id" [animalId]="selectedVisitDetails.animal_id" (updateVisit)="updateVisitDetails($event)"></visit-form>
 
 
 <!--<appointment-form *ngIf="selectedAnimalVisit && userId"-->

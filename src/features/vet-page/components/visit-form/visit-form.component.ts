@@ -1,7 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {VisitInfo} from "../../../../core/models/visit.model";
 import {VisitService} from "../../../../core/services/visit/visit.service";
+import {RecommendationService} from "../../../../core/services/recommendation/recommendation.service";
+import {compileResults} from "@angular/compiler-cli/src/ngtsc/annotations/common";
 
 @Component({
   selector: 'visit-form',
@@ -9,10 +11,7 @@ import {VisitService} from "../../../../core/services/visit/visit.service";
   styleUrl: './visit-form.component.scss'
 })
 export class VisitFormComponent implements OnInit {
-  // @Input() visitEdit?: VisitInfo;
-
-
-  // @Input() animalId: number | null | undefined = null;
+  @Input() animalId!: number;
   @Input() visitId!: number;
 
 
@@ -22,16 +21,22 @@ export class VisitFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-  private visitService: VisitService,
-  ) { }
+    private visitService: VisitService,
+    private recommendationService: RecommendationService,
+  ) {
+  }
 
   ngOnInit() {
     this.visitForm = this.fb.group({
       name: [''],
       description: [''],
       status: [''],
+      recommendationName: [''],
+      recommendation: [''],
+      animal_id: [this.animalId, Validators.required]
     });
-    console.log('visit id:',this.visitId)
+    console.log('visit id:', this.visitId)
+    console.log('animal id:', this.animalId)
   }
 
   onSubmit() {
@@ -42,6 +47,21 @@ export class VisitFormComponent implements OnInit {
         },
         error => {
           console.error('Wystąpił błąd podczas wysyłania informacji o wizycie', error);
+        }
+      );
+
+      const recommendationData = {
+        name: this.visitForm.get('recommendationName')?.value,
+        description: this.visitForm.get('recommendation')?.value,
+        animal_id: this.animalId
+      };
+
+      this.recommendationService.createRecommendation(recommendationData).subscribe(
+        result => {
+          console.log('Zalecenia wyslane', result)
+        },
+        error => {
+          console.error('Wystąpił błąd podczas wysyłania zaleceń', error);
         }
       );
     }
