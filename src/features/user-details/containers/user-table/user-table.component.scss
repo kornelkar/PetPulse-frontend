@@ -39,9 +39,13 @@
     @include mobile {
       display: grid;
       column-gap: 20px;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       padding: 10px 22px;
       border-bottom: 1px solid grey;
     }
   }
+}
+
+h2 {
+  margin-top: 20px;
 }

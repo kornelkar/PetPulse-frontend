@@ -28,15 +28,14 @@ export class LoginPageComponent {
     this.authService.login(this.user.email, this.user.password).subscribe(
       data => {
         console.log('Login successful', data);
-        // Logika sprawdzająca adres URL
         const path = this.location.path();
         console.log(path)
-        if (path.includes('/petpulse')) {
+        if (path.includes('/user/petpulse')) {
           this.router.navigate(['/pet-user-page']);
         } else if (path.includes('/admin/petpulse')) {
           this.router.navigate(['/pet-admin-page']);
         }
-        else if (path.includes('/vet/petpulse')) {
+        else if (path.includes('/petpulse')) {
           this.router.navigate(['/vet-page']);
         }
         else {
