@@ -3,8 +3,6 @@
   </ng-template>
 
   <a
-    rippleEffect
-    [isDisabled]="isDisabled"
     *ngIf="isNativeLink"
     [target]="target"
     [routerLink]="link"
@@ -28,8 +26,6 @@
   </a>
 
   <button
-    rippleEffect
-    [isDisabled]="isDisabled"
     (click)="onClick($event)"
     *ngIf="!isNativeLink"
     [disabled]="isDisabled"
