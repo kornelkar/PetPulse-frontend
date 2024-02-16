@@ -3,7 +3,7 @@ import { SharedModule } from 'src/shared/shared.module';
 import { UserComponent } from "./user.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PetHeaderComponent } from "src/core/components/pet-header/pet-header.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "../../core/interceptor/token-interceptor";
@@ -26,6 +26,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     RouterOutlet,
     UserRoutingModule,
     UserDetailsModule,
+    ReactiveFormsModule,
   ],
     providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, provideAnimationsAsync()],
     bootstrap: [

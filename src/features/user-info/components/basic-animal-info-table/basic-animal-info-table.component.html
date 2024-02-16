@@ -3,17 +3,16 @@
     <div class="table__header--id">Id</div>
     <div class="table__header--name">Nazwa</div>
     <div class="table__header--microchip">Numer mikrochipu</div>
-    <div class="table__header--weight">Waga </div>
+    <div class="table__header--weight">Waga</div>
     <div class="table__header--age">Wiek</div>
     <div class="table__header--color">Kolor</div>
     <div class="table__header--gender">Płeć</div>
     <div class="table__header--type">Typ Zwierzęcia</div>
     <div class="table__header--breed">Rasa</div>
-    <div class="table__header--owner">Właściciel</div>
     <div class="table__header--role"></div>
   </div>
   <div class="table__content">
-    <div class="table__row" *ngIf="let detail of animal">
+    <div class="table__row" *ngFor="let detail of animal">
       <div class="table__row--cell-name">{{ detail.id }}</div>
       <div class="table__row--cell-surname">{{ detail.name }}</div>
       <div class="table__row--cell-company">{{ detail.microchip_number}}</div>
@@ -21,9 +20,8 @@
       <div class="table__row--cell-regon">{{ detail.age }}</div>
       <div class="table__row--cell-postal">{{ detail.color }}</div>
       <div class="table__row--cell-city">{{ detail.gender }}</div>
-      <div class="table__row--cell-street">{{ detail.animal_type }}</div>
-      <div class="table__row--cell-street">{{ detail.breed }}</div>
-      <div class="table__row--cell-street">{{ detail.owner }}</div>
+      <div class="table__row--cell-street">{{ detail.animal_type!.name }}</div>
+      <div class="table__row--cell-street">{{ detail.breed!.name }}</div>
       <base-button (click)="onViewTestsClick(detail)"
                    class="table__row--cell-view"
                    kind="filled-shadow-blue"
@@ -32,14 +30,27 @@
                    padding="tiny">
         WYNIKI BADAŃ
       </base-button>
+      <base-button (click)="onViewRecommendationClick(detail)"
+                   class="table__row--cell-view"
+                   kind="filled-shadow-blue"
+                   font="tiny"
+                   size="tiny"
+                   padding="tiny">
+        ZALECENIA
+      </base-button>
     </div>
   </div>
 </div>
 
-<!--  [animalId]="selectedAnimalTests.animal_id">--
-<!--</tests-table>-->
 
 <tests-table
-  *ngIf="selectedAnimalTests"></tests-table>
+  *ngIf="selectedAnimalTests"
+  [animalId]="selectedAnimalTests.animal_id">
+</tests-table>
+
+<recommendations-list
+*ngIf="selectedAnimalRecommendation"
+[animalId]="selectedAnimalRecommendation.animal_id">
+</recommendations-list>
 
 

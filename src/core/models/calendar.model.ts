@@ -1,4 +1,3 @@
-
 export class Calendar {
   name?: string;
   description?: string;

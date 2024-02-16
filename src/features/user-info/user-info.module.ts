@@ -7,25 +7,31 @@ import {HttpClientModule} from "@angular/common/http";
 import {PetUserPageComponent} from "./containers/pet-user-page/pet-user-page.component";
 import {EditOwnerDataFormComponent} from "./components/edit-owner-data-form/edit-owner-data-form.component";
 import {BasicAnimalInfoTableComponent} from "./components/basic-animal-info-table/basic-animal-info-table.component";
+import {RecommendationsListComponent} from "./components/recommendations-list/recommendations-list.component";
+import {VetPageModule} from "../vet-page/vet-page.module";
 
 @NgModule({
   declarations: [
     BasicOwnerInfoTableComponent,
     PetUserPageComponent,
     EditOwnerDataFormComponent,
+    RecommendationsListComponent,
+    BasicAnimalInfoTableComponent,
   ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        SharedModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        BasicAnimalInfoTableComponent,
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    VetPageModule,
+  ],
   providers: [],
   exports: [
     BasicOwnerInfoTableComponent,
     PetUserPageComponent,
+    RecommendationsListComponent,
+    BasicAnimalInfoTableComponent,
   ]
 })
 export class UserDetailsModule {

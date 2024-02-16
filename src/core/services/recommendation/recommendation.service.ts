@@ -11,7 +11,7 @@ export class RecommendationService {
   constructor(private http: HttpClient) { }
 
   // Metoda do pobierania zaleceń na podstawie ID zwierzęcia
-  getRecommendationsByAnimalId(id: number): Observable<any> {
+  getRecommendationsByAnimalId(id: number | undefined): Observable<any> {
     const url = `${this.baseUrl}/${id}`;
     const httpOptions = {
       headers: new HttpHeaders({

@@ -31,12 +31,12 @@ export class LoginPageComponent {
         // Logika sprawdzająca adres URL
         const path = this.location.path();
         console.log(path)
-        if (path.includes('/user/petpulse')) {
+        if (path.includes('/petpulse')) {
           this.router.navigate(['/pet-user-page']);
         } else if (path.includes('/admin/petpulse')) {
           this.router.navigate(['/pet-admin-page']);
         }
-        else if (path.includes('/petpulse')) {
+        else if (path.includes('/vet/petpulse')) {
           this.router.navigate(['/vet-page']);
         }
         else {
