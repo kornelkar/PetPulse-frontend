@@ -28,7 +28,7 @@ export class AppointmentFormComponent implements OnInit {
       description: ['', Validators.required],
       start_date: ['', Validators.required],
       end_date: ['', Validators.required],
-      user_id: [this.userId, ],
+      user_id: [this.userId, Validators.required ],
       animal_id: [this.animalId, Validators.required]
     });
   }

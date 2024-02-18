@@ -1,28 +1,29 @@
 <div class="container mt-5">
+  <h2>Dodaj nowego pupila</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Nazwa</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="animalEdit.name" name="name" placeholder="Nazwa" required>
+      <label for="name">Imie</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="animalEdit.name" name="name" placeholder="Podaj imię" required>
     </div>
 
     <div class="form-group">
       <label for="microchip_number">Numer mikrochipu</label>
-      <input type="number" class="form-control" id="microchip_number" [(ngModel)]="animalEdit.microchip_number" name="microchip_number" placeholder="Numer mikrochipa">
+      <input type="number" class="form-control" id="microchip_number" [(ngModel)]="animalEdit.microchip_number" name="microchip_number" placeholder="123456789012345">
     </div>
 
     <div class="form-group">
       <label for="weight">Waga</label>
-      <input type="number" class="form-control" id="weight" [(ngModel)]="animalEdit.weight" name="weight" placeholder="Waga">
+      <input type="number" class="form-control" id="weight" [(ngModel)]="animalEdit.weight" name="weight" placeholder="Podaj wagę w kilogramach">
     </div>
 
     <div class="form-group">
       <label for="age">Wiek</label>
-      <input type="number" class="form-control" id="age" [(ngModel)]="animalEdit.age" name="age" placeholder="Wiek">
+      <input type="number" class="form-control" id="age" [(ngModel)]="animalEdit.age" name="age" placeholder="Podaj wiek w latach">
     </div>
 
     <div class="form-group">
       <label for="color">Kolor</label>
-      <input type="text" class="form-control" id="color" [(ngModel)]="animalEdit.color" name="color" placeholder="Kolor">
+      <input type="text" class="form-control" id="color" [(ngModel)]="animalEdit.color" name="color" placeholder="Podaj kolor pupila">
     </div>
 
     <div class="form-group">
@@ -52,7 +53,7 @@
 
     <div class="form-group">
       <label for="owner_id">ID Właściciela</label>
-      <input type="number" class="form-control" id="owner_id" [(ngModel)]="animalEdit.owner_id" name="owner_id" placeholder="ID Właściciela">
+      <input type="number" class="form-control" id="owner_id" [(ngModel)]="animalEdit.owner_id" name="owner_id" placeholder="Podaj indywidualny numer ID właściciela">
     </div>
 
     <button type="submit" class="btn btn-primary">Dodaj zwierzę</button>

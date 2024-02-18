@@ -25,7 +25,7 @@
       <div class="table__row--cell-street">{{ ownerInfo.street }}</div>
       <div class="table__row--cell-phone">{{ ownerInfo.phone }}</div>
       <div class="table__row--cell-id">{{ ownerInfo.user_id }}</div>
-      <div class="table__row--cell-role">{{ ownerInfo.user }}</div>
+      <div class="table__row--cell-role">{{ ownerInfo.user.role?.name}}</div>
       <base-button (pointerClick)="onUserEditClick(ownerInfo)"
                    class="table__row--cell-edit"
                    kind="filled-shadow-white-blue"

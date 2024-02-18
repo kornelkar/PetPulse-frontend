@@ -10,7 +10,6 @@ import {Role} from "../../../../core/models/role.model";
 })
 export class EditUserDataFormComponent {
   @Input() userEdit!: UserDetails;
-
   @Output() updateUser: EventEmitter<UserDetails> = new EventEmitter();
 
   roles!: Role[];
@@ -33,6 +32,23 @@ export class EditUserDataFormComponent {
   }
 
   onSubmit() {
-    this.updateUser.emit(this.userEdit);
+    // Aktualizacja roli użytkownika
+    if (this.userEdit && this.userEdit.role_id) {
+      this.roleService.updateUserRole(this.userEdit.id, this.userEdit.role_id).subscribe({
+        next: (response) => {
+          // Tutaj można dodać logikę obsługi po pomyślnej aktualizacji roli, np. wyświetlić komunikat
+          console.log('UserRole updated successfully', response);
+          // Emitowanie zmian użytkownika do komponentu nadrzędnego
+          this.updateUser.emit(this.userEdit);
+        },
+        error: (error) => {
+          // Obsługa błędów, np. wyświetlenie komunikatu o błędzie
+          console.error('Error updating user role', error);
+        }
+      });
+    } else {
+      // Jeśli rola nie została zmieniona, po prostu emituj zmiany
+      this.updateUser.emit(this.userEdit);
+    }
   }
 }

@@ -9,6 +9,7 @@ import {EditOwnerDataFormComponent} from "./components/edit-owner-data-form/edit
 import {BasicAnimalInfoTableComponent} from "./components/basic-animal-info-table/basic-animal-info-table.component";
 import {RecommendationsListComponent} from "./components/recommendations-list/recommendations-list.component";
 import {VetPageModule} from "../vet-page/vet-page.module";
+import {AllOwnerVisitsComponent} from "./components/all-owner-visits/all-owner-visits.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {VetPageModule} from "../vet-page/vet-page.module";
     EditOwnerDataFormComponent,
     RecommendationsListComponent,
     BasicAnimalInfoTableComponent,
+    AllOwnerVisitsComponent,
   ],
   imports: [
     CommonModule,

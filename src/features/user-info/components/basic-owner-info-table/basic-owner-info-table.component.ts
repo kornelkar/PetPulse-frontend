@@ -61,7 +61,6 @@ export class BasicOwnerInfoTableComponent implements OnInit {
   }
 
   handleUpdate(updatedUserDetails: OwnerInfo) {
-    // Logika aktualizacji danych użytkownika, np. wywołanie serwisu
     console.log(updatedUserDetails);
   }
 }

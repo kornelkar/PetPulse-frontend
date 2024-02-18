@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {VisitInfo} from "../../models/visit.model";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,17 @@ export class VisitService {
     };
 
     return this.http.get(this.baseUrl, httpOptions);
+  }
+
+  getAllOwnerVisits(ownerId: number | undefined): Observable<VisitInfo[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+      })
+    };
+
+    return this.http.get<VisitInfo[]>(`${this.baseUrl.replace('visit', `animal/visits/all/${ownerId}`)}`, httpOptions);
   }
 
   getVisitById(id: number): Observable<any> {

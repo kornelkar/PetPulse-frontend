@@ -21,6 +21,15 @@ export class AnimalService {
     return this.http.get<AnimalInfo[]>(this.baseUrl, httpOptions);
   }
 
+  getAllOwnersAnimals(ownerId: number | undefined): Observable<AnimalInfo[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+      })
+    };
+    return this.http.get<AnimalInfo[]>(`${this.baseUrl.replace('animal', `owner/animals/${ownerId}`)}`, httpOptions);
+  }
+
   getAnimalById(id: number): Observable<AnimalInfo> {
     const url = `${this.baseUrl}/${id}`;
     const httpOptions = {

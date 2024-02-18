@@ -10,6 +10,7 @@ import {TestResult} from "../../../../core/models/test-result.model";
 import {NgForOf, NgIf} from "@angular/common";
 import {Recommendation} from "../../../../core/models/recommendation.model";
 import {RecommendationsListComponent} from "../recommendations-list/recommendations-list.component";
+import {UserInfo} from "../../../../core/models/user-info.model";
 
 @Component({
   selector: 'basic-animal-info-table',
@@ -23,7 +24,7 @@ export class BasicAnimalInfoTableComponent {
 
   animal!: AnimalInfo[];
   ownerInfo!: OwnerInfo;
-  userInfo!: OwnerInfo
+  userInfo!: UserInfo
 
   constructor(
     private animalService: AnimalService,
@@ -49,9 +50,10 @@ export class BasicAnimalInfoTableComponent {
   // }
 
   loadOwnersAnimal(): void {
-    this.animalService.getAllAnimals().subscribe(
+    this.animalService.getAllOwnersAnimals(this.userInfo.owner?.id).subscribe(
       (data: AnimalInfo[]) => {
         this.animal = data;
+        console.log('owners animals',this.animal)
       },
       error => {
         console.error('Error fetching all users', error);
@@ -64,7 +66,6 @@ export class BasicAnimalInfoTableComponent {
       data => {
         this.userInfo = data;
         this.loadOwnersAnimal();
-        console.log('zwierzaki info:', this.animal)
       },
       error => {
         console.error('Error fetching user info', error);

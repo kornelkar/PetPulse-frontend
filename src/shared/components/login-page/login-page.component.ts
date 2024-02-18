@@ -32,10 +32,10 @@ export class LoginPageComponent {
         console.log(path)
         if (path.includes('/user/petpulse')) {
           this.router.navigate(['/pet-user-page']);
-        } else if (path.includes('/admin/petpulse')) {
+        } else if (path.includes('/petpulse')) {
           this.router.navigate(['/pet-admin-page']);
         }
-        else if (path.includes('/petpulse')) {
+        else if (path.includes('/vet/petpulse')) {
           this.router.navigate(['/vet-page']);
         }
         else {
